@@ -11,7 +11,8 @@ import SwiftUI
 struct SensorDataApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            AccelerometerView()
         }
     }
 }
