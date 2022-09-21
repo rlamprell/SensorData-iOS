@@ -11,9 +11,13 @@ import SwiftUI
 struct SensorDataApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
+            let thismotion = MotionManager()
+            ContentView(motion: thismotion)
+            ContentView(motion: thismotion)
+            ContentView(motion: thismotion)
+            ContentView(motion: thismotion)
 //            AccelerometerView()
-            mainViewerView()
+//            mainViewerView()
         }
     }
 }
