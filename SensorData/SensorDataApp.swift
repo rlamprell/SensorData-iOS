@@ -13,8 +13,9 @@ struct SensorDataApp: App {
         WindowGroup {
             let thismotion = MotionManager()
             let maggy = MagnetManager()
+            let acc = Accelermanager()
             ContentView(motion: maggy)
-            ContentView(motion: thismotion)
+            ContentView(motion: acc)
             ContentView(motion: thismotion)
             ContentView(motion: thismotion)
 //            AccelerometerView()

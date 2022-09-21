@@ -60,7 +60,6 @@ class MagnetManager: MotionManager {
     
     override init() {
         super.init()
-//        self.motionManager = CMMotionManager()
         self.motionManager.magnetometerUpdateInterval = 0.5
         self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
             guard error == nil else {
@@ -72,6 +71,45 @@ class MagnetManager: MotionManager {
                 self.x = data.magneticField.x
                 self.y = data.magneticField.y
                 self.z = data.magneticField.z
+            }
+        }
+    }
+}
+
+
+class Accelermanager: MotionManager {
+    override func start() {
+        motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+
+            if let data = data {
+                self.x = data.acceleration.x
+                self.y = data.acceleration.y
+                self.z = data.acceleration.z
+            }
+        }
+    }
+    
+    override func stop() {
+        motionManager.stopMagnetometerUpdates()
+    }
+    
+    override init() {
+        super.init()
+        self.motionManager.accelerometerUpdateInterval = 0.5
+        self.motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+
+            if let data = data {
+                self.x = data.acceleration.x
+                self.y = data.acceleration.y
+                self.z = data.acceleration.z
             }
         }
     }
