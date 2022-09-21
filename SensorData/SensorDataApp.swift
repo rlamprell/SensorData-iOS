@@ -12,7 +12,8 @@ struct SensorDataApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            AccelerometerView()
+//            AccelerometerView()
+            mainViewerView()
         }
     }
 }
