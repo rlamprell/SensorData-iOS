@@ -12,7 +12,8 @@ struct SensorDataApp: App {
     var body: some Scene {
         WindowGroup {
             let thismotion = MotionManager()
-            ContentView(motion: thismotion)
+            let maggy = MagnetManager()
+            ContentView(motion: maggy)
             ContentView(motion: thismotion)
             ContentView(motion: thismotion)
             ContentView(motion: thismotion)

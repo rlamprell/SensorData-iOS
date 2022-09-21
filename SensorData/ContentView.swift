@@ -38,9 +38,50 @@ struct ContentView: View {
 
 
 
+class MagnetManager: MotionManager {
+    override func start() {
+        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+
+            if let data = data {
+                self.x = data.magneticField.x
+                self.y = data.magneticField.y
+                self.z = data.magneticField.z
+            }
+        }
+    }
+    
+    override func stop() {
+        motionManager.stopMagnetometerUpdates()
+    }
+    
+    override init() {
+        super.init()
+//        self.motionManager = CMMotionManager()
+        self.motionManager.magnetometerUpdateInterval = 0.5
+        self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+
+            if let data = data {
+                self.x = data.magneticField.x
+                self.y = data.magneticField.y
+                self.z = data.magneticField.z
+            }
+        }
+    }
+}
+
+
+
 class MotionManager: ObservableObject {
     // MotionManager use the ObservableObject Combine property.
-    private var motionManager: CMMotionManager
+    var motionManager: CMMotionManager
     
     @Published
     var x: Double = 0.0
@@ -51,46 +92,103 @@ class MotionManager: ObservableObject {
     // x, y and z use are Published so ContentView can read the values when they update.
     
     
-    func start() {
-        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-            
-            if let data = data {
-                self.x = data.magneticField.x
-                self.y = data.magneticField.y
-                self.z = data.magneticField.z
-            }
-            
-        }
-    }
+    func start() {}
+//        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            if let data = data {
+//                self.x = data.magneticField.x
+//                self.y = data.magneticField.y
+//                self.z = data.magneticField.z
+//            }
+//
+//        }
+//    }
     
     
-    func stop() {
-        motionManager.stopMagnetometerUpdates()
-    }
+    func stop() {}
+//        motionManager.stopMagnetometerUpdates()
+//    }
     
     
     // init
     init() {
         self.motionManager = CMMotionManager()
-        self.motionManager.magnetometerUpdateInterval = 0.5
-        self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-            
-            if let data = data {
-                self.x = data.magneticField.x
-                self.y = data.magneticField.y
-                self.z = data.magneticField.z
-            }
-        }
     }
+//        self.motionManager.magnetometerUpdateInterval = 0.5
+//        self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            if let data = data {
+//                self.x = data.magneticField.x
+//                self.y = data.magneticField.y
+//                self.z = data.magneticField.z
+//            }
+//        }
+//    }
 }
+//
+//
+//class MotionManager: ObservableObject {
+//    // MotionManager use the ObservableObject Combine property.
+//    private var motionManager: CMMotionManager
+//
+//    @Published
+//    var x: Double = 0.0
+//    @Published
+//    var y: Double = 0.0
+//    @Published
+//    var z: Double = 0.0
+//    // x, y and z use are Published so ContentView can read the values when they update.
+//
+//
+//    func start() {
+//        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            if let data = data {
+//                self.x = data.magneticField.x
+//                self.y = data.magneticField.y
+//                self.z = data.magneticField.z
+//            }
+//
+//        }
+//    }
+//
+//
+//    func stop() {
+//        motionManager.stopMagnetometerUpdates()
+//    }
+//
+//
+//    // init
+//    init() {
+//        self.motionManager = CMMotionManager()
+//        self.motionManager.magnetometerUpdateInterval = 0.5
+//        self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            if let data = data {
+//                self.x = data.magneticField.x
+//                self.y = data.magneticField.y
+//                self.z = data.magneticField.z
+//            }
+//        }
+//    }
+//}
+
 
 class MagnetMotionManager: ObservableObject {
     // MotionManager use the ObservableObject Combine property.
