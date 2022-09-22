@@ -16,7 +16,6 @@ struct ContentView: View {
     // You need to instanciate your MotionManager class as an ObservedObject to use x, y and z when the update
     
     var body: some View {
-        
         HStack {
             Button("Start") {
                 motion.start()
@@ -28,7 +27,7 @@ struct ContentView: View {
         }
         
         VStack {
-            Text("Magnetometer Data")
+            Text(motion.getSensorName())
             Text("X: \(motion.x)")
             Text("Y: \(motion.y)")
             Text("Z: \(motion.z)")
@@ -56,7 +55,11 @@ class MagnetManager: MotionManager {
                 self.z = data.magneticField.z
             }
         }
-        
+    }
+    
+    
+    override func getSensorName()->String {
+        return "Magnet Data"
     }
 }
 
@@ -80,46 +83,43 @@ class AccelerManager: MotionManager {
                 self.z = data.acceleration.z
             }
         }
-        
+    }
+    
+    
+    override func getSensorName()->String {
+        return "Accel Data"
     }
 }
-//class Accelermanager: MotionManager {
-//    override func start() {
-//        motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//
-//            if let data = data {
-//                self.x = data.acceleration.x
-//                self.y = data.acceleration.y
-//                self.z = data.acceleration.z
-//            }
-//        }
-//    }
-//
-//    override func stop() {
-//        motionManager.stopMagnetometerUpdates()
-//    }
-//
-//    override init() {
-//        super.init()
-//        self.motionManager.accelerometerUpdateInterval = 0.5
-//        self.motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//
-//            if let data = data {
-//                self.x = data.acceleration.x
-//                self.y = data.acceleration.y
-//                self.z = data.acceleration.z
-//            }
-//        }
-//    }
-//}
+
+
+
+
+class GyroManager: MotionManager {
+    override func setUpdateInterval() {
+        self.motionManager.gyroUpdateInterval = 0.5
+    }
+    
+    
+    override func startUpdates() {
+        self.motionManager.startGyroUpdates(to: .main) { (data, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            if let data = data {
+                self.x = data.rotationRate.x
+                self.y = data.rotationRate.y
+                self.z = data.rotationRate.z
+            }
+        }
+    }
+    
+    
+    override func getSensorName()->String {
+        return "Gyro Data"
+    }
+}
+
 
 
 
@@ -127,15 +127,9 @@ class MotionManager: ObservableObject {
     // MotionManager use the ObservableObject Combine property.
     var motionManager: CMMotionManager
     
-    @Published
-    var x: Double = 0.0
-    @Published
-    var y: Double = 0.0
-    @Published
-    var z: Double = 0.0
-    // x, y and z use are Published so ContentView can read the values when they update.
-//    var motionType = ""
-    
+    @Published var x: Double = 0.0
+    @Published var y: Double = 0.0
+    @Published var z: Double = 0.0
     
     func start() {
         self.startUpdates()
@@ -147,10 +141,8 @@ class MotionManager: ObservableObject {
     
     func setUpdateInterval() {}
     func startUpdates() {}
-//    func addData() {}
+    func getSensorName()->String { return "" }
     
-    
-    // init
     init() {
         self.motionManager = CMMotionManager()
         self.setUpdateInterval()
