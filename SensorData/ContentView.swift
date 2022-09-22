@@ -46,17 +46,17 @@ class MagnetManager: MotionManager {
                 return
             }
 
-            if let data = data {
-                self.x = data.magneticField.x
-                self.y = data.magneticField.y
-                self.z = data.magneticField.z
-            }
+            self.addData(input: data)
+            self.addData0(input: data)
+//            self.addData0(input: data, property: \.magneticField.x)
         }
     }
+    
     
     override func stop() {
         motionManager.stopMagnetometerUpdates()
     }
+    
     
     override init() {
         super.init()
@@ -66,12 +66,63 @@ class MagnetManager: MotionManager {
                 print(error!)
                 return
             }
-
-            if let data = data {
-                self.x = data.magneticField.x
-                self.y = data.magneticField.y
-                self.z = data.magneticField.z
+            self.addData(input: data)
+//            self.addData0(input: data, property: \.magneticField.x)
+            self.addData0(input: data)
+        }
+    }
+    
+    
+    func addData(input: Optional<CMMagnetometerData>) {
+        if let data = input {
+//            print(type(of: data.magneticField))
+            self.x = data.magneticField.x
+            self.y = data.magneticField.y
+            self.z = data.magneticField.z
+        }
+    }
+    
+    func addData0(input: Optional<CMMagnetometerData>) {
+        if let data = input {
+//            return
+//            data.perform(NSSelectorFromString("magneticField"))
+//            let mags = data.value(forKey: "magneticField")
+//            print(type(of: mags))
+            let thispath = "\\.magneticField.x"
+            print(thispath)
+//            print(data[keyPath: T])
+            self.addSingleDP(input: data, property: \.magneticField.x)
+//            addSingleDP(input: data, property: \.magneticField.y)
+//            addSingleDP(input: data, property: \.magneticField.z)
+        }
+    }
+    
+//    func addData0<T: CustomStringConvertible>(input: Optional<CMMagnetometerData>, property: KeyPath<CMMagnetometerData, T>) {
+//        if let data = input {
+////            print(type(of: data.magneticField))
+//            self.x = data.magneticField.x
+////            print(data.valueForKey: "magneticField")
+////            print(data[keyPath: <#T##KeyPath<CMMagnetometerData, Value>#>])
+//            print(data[keyPath: property])
+//            print(data.magneticField)
+////            print(type(of: data))
+//        }
+//    }
+    
+    func addSingleDP<T: CustomStringConvertible>(input: CMMagnetometerData, property: KeyPath<CMMagnetometerData, T>) {
+        print(input[keyPath: property])
+        
+    }
+    
+    
+    func initialise_updates() {
+        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
+            guard error == nil else {
+                print(error!)
+                return
             }
+
+            self.addData(input: data)
         }
     }
 }
@@ -128,48 +179,18 @@ class MotionManager: ObservableObject {
     @Published
     var z: Double = 0.0
     // x, y and z use are Published so ContentView can read the values when they update.
+    var motionType = ""
     
     
     func start() {}
-//        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//
-//            if let data = data {
-//                self.x = data.magneticField.x
-//                self.y = data.magneticField.y
-//                self.z = data.magneticField.z
-//            }
-//
-//        }
-//    }
-    
-    
     func stop() {}
-//        motionManager.stopMagnetometerUpdates()
-//    }
+    func setType() {}
     
     
     // init
     init() {
         self.motionManager = CMMotionManager()
     }
-//        self.motionManager.magnetometerUpdateInterval = 0.5
-//        self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//
-//            if let data = data {
-//                self.x = data.magneticField.x
-//                self.y = data.magneticField.y
-//                self.z = data.magneticField.z
-//            }
-//        }
-//    }
 }
 //
 //
