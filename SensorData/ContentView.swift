@@ -39,157 +39,87 @@ struct ContentView: View {
 
 
 class MagnetManager: MotionManager {
-//    private let sensorType = "magneticField"
-    
-    override func start() {
-        self.startUpdates()
-//        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//
-//            self.addData(input: data)
-////            self.addData0(input: data)
-//            //            self.addData0(input: data, property: \.magneticField.x)
-//        }
-    }
-    
-    
-    override func stop() {
-        motionManager.stopMagnetometerUpdates()
-    }
-    
-    
-    override init() {
-        super.init()
+    override func setUpdateInterval() {
         self.motionManager.magnetometerUpdateInterval = 0.5
-        self.startUpdates()
-//        self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
-//            guard error == nil else {
-//                print(error!)
-//                return
-//            }
-//            self.addData(input: data)
-//            //            self.addData0(input: data, property: \.magneticField.x)
-////            self.addData0(input: data)
-//        }
     }
     
     
-    func startUpdates() {
+    override func startUpdates() {
         self.motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
             guard error == nil else {
                 print(error!)
                 return
             }
-            self.addData(input: data)
-            //            self.addData0(input: data, property: \.magneticField.x)
-//            self.addData0(input: data)
+            if let data = data {
+                self.x = data.magneticField.x
+                self.y = data.magneticField.y
+                self.z = data.magneticField.z
+            }
         }
+        
     }
-    
-    
-    func addData(input: Optional<CMMagnetometerData>) {
-        if let data = input {
-            //            print(type(of: data.magneticField))
-            self.x = data.magneticField.x
-            self.y = data.magneticField.y
-            self.z = data.magneticField.z
-        }
-    }
-    
-    //    func addData0(input: Optional<CMMagnetometerData>) {
-    //        if let data = input {
-    ////            return
-    ////            data.perform(NSSelectorFromString("magneticField"))
-    ////            let mags = data.value(forKey: "magneticField")
-    ////            print(type(of: mags))
-    ////            let thispath = "\\.magneticField.x"
-    ////            var thispath = "\\.\(self.sensorType).x"
-    ////            print(thispath)
-    //            let thispath = [\data.magneticField.x]
-    ////            print(data[keyPath: T])
-    //            self.addSingleDP(input: data, property: thispath)
-    //            self.addSingleDP(input: data, property: \.magneticField.y)
-    //            self.addSingleDP(input: data, property: \.magneticField.z)
-    ////            addSingleDP(input: data, property: \.magneticField.y)
-    ////            addSingleDP(input: data, property: \.magneticField.z)
-    //        }
-    //    }
-    //
-    ////    func addData0<T: CustomStringConvertible>(input: Optional<CMMagnetometerData>, property: KeyPath<CMMagnetometerData, T>) {
-    ////        if let data = input {
-    //////            print(type(of: data.magneticField))
-    ////            self.x = data.magneticField.x
-    //////            print(data.valueForKey: "magneticField")
-    //////            print(data[keyPath: <#T##KeyPath<CMMagnetometerData, Value>#>])
-    ////            print(data[keyPath: property])
-    ////            print(data.magneticField)
-    //////            print(type(of: data))
-    ////        }
-    ////    }
-    //
-    //    func addSingleDP<T>(input: CMMagnetometerData, property: KeyPath<CMMagnetometerData, T>) {
-    //        print(input[keyPath: property])
-    //
-    //    }
-    //
-    ////    func addSingleDP<T: CustomStringConvertible>(input: CMMagnetometerData, property: KeyPath<CMMagnetometerData, T>) {
-    ////        print(input[keyPath: property])
-    ////
-    ////    }
-    //
-    //    func initialise_updates() {
-    //        motionManager.startMagnetometerUpdates(to: .main) { (data, error) in
-    //            guard error == nil else {
-    //                print(error!)
-    //                return
-    //            }
-    //
-    //            self.addData(input: data)
-    //        }
-    //    }
-    //}
 }
 
-class Accelermanager: MotionManager {
-    override func start() {
-        motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
-            guard error == nil else {
-                print(error!)
-                return
-            }
 
-            if let data = data {
-                self.x = data.acceleration.x
-                self.y = data.acceleration.y
-                self.z = data.acceleration.z
-            }
-        }
-    }
-    
-    override func stop() {
-        motionManager.stopMagnetometerUpdates()
-    }
-    
-    override init() {
-        super.init()
+
+class AccelerManager: MotionManager {
+    override func setUpdateInterval() {
         self.motionManager.accelerometerUpdateInterval = 0.5
+    }
+    
+    
+    override func startUpdates() {
         self.motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
             guard error == nil else {
                 print(error!)
                 return
             }
-
             if let data = data {
                 self.x = data.acceleration.x
                 self.y = data.acceleration.y
                 self.z = data.acceleration.z
             }
         }
+        
     }
 }
+//class Accelermanager: MotionManager {
+//    override func start() {
+//        motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            if let data = data {
+//                self.x = data.acceleration.x
+//                self.y = data.acceleration.y
+//                self.z = data.acceleration.z
+//            }
+//        }
+//    }
+//
+//    override func stop() {
+//        motionManager.stopMagnetometerUpdates()
+//    }
+//
+//    override init() {
+//        super.init()
+//        self.motionManager.accelerometerUpdateInterval = 0.5
+//        self.motionManager.startAccelerometerUpdates(to: .main) { (data, error) in
+//            guard error == nil else {
+//                print(error!)
+//                return
+//            }
+//
+//            if let data = data {
+//                self.x = data.acceleration.x
+//                self.y = data.acceleration.y
+//                self.z = data.acceleration.z
+//            }
+//        }
+//    }
+//}
 
 
 
@@ -204,17 +134,27 @@ class MotionManager: ObservableObject {
     @Published
     var z: Double = 0.0
     // x, y and z use are Published so ContentView can read the values when they update.
-    var motionType = ""
+//    var motionType = ""
     
     
-    func start() {}
-    func stop() {}
-    func setType() {}
+    func start() {
+        self.startUpdates()
+    }
+
+    func stop() {
+        motionManager.stopMagnetometerUpdates()
+    }
+    
+    func setUpdateInterval() {}
+    func startUpdates() {}
+//    func addData() {}
     
     
     // init
     init() {
         self.motionManager = CMMotionManager()
+        self.setUpdateInterval()
+        self.startUpdates()
     }
 }
 //
