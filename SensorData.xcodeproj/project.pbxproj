@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B22B83628DC9CCB005F97CE /* SensorClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22B83528DC9CCB005F97CE /* SensorClasses.swift */; };
+		4B22B83828DC9E58005F97CE /* SocketIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22B83728DC9E58005F97CE /* SocketIO.swift */; };
+		4B22B83B28DC9FAD005F97CE /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4B22B83A28DC9FAD005F97CE /* SocketIO */; };
 		4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */; };
 		4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488C328D9BAB70057B2E2 /* ContentView.swift */; };
 		4B4488C628D9BAB80057B2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4488C528D9BAB80057B2E2 /* Assets.xcassets */; };
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B22B83528DC9CCB005F97CE /* SensorClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorClasses.swift; sourceTree = "<group>"; };
+		4B22B83728DC9E58005F97CE /* SocketIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIO.swift; sourceTree = "<group>"; };
 		4B4488BE28D9BAB70057B2E2 /* SensorData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataApp.swift; sourceTree = "<group>"; };
 		4B4488C328D9BAB70057B2E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B22B83B28DC9FAD005F97CE /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,8 @@
 			children = (
 				4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */,
 				4B4488C328D9BAB70057B2E2 /* ContentView.swift */,
+				4B22B83528DC9CCB005F97CE /* SensorClasses.swift */,
+				4B22B83728DC9E58005F97CE /* SocketIO.swift */,
 				4B4488C528D9BAB80057B2E2 /* Assets.xcassets */,
 				4B4488C728D9BAB80057B2E2 /* Preview Content */,
 			);
@@ -143,6 +151,9 @@
 			dependencies = (
 			);
 			name = SensorData;
+			packageProductDependencies = (
+				4B22B83A28DC9FAD005F97CE /* SocketIO */,
+			);
 			productName = SensorData;
 			productReference = 4B4488BE28D9BAB70057B2E2 /* SensorData.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +226,9 @@
 				Base,
 			);
 			mainGroup = 4B4488B528D9BAB70057B2E2;
+			packageReferences = (
+				4B22B83928DC9FAD005F97CE /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
+			);
 			productRefGroup = 4B4488BF28D9BAB70057B2E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,6 +273,8 @@
 			files = (
 				4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */,
 				4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */,
+				4B22B83828DC9E58005F97CE /* SocketIO.swift in Sources */,
+				4B22B83628DC9CCB005F97CE /* SensorClasses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +601,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B22B83928DC9FAD005F97CE /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B22B83A28DC9FAD005F97CE /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B22B83928DC9FAD005F97CE /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B4488B628D9BAB70057B2E2 /* Project object */;
 }
