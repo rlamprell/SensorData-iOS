@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var motion: MotionManager
-    @State private var turnOn = true
+    @State private var turnOn = false
 //    @State private var showGreeting = true
     // You need to instanciate your MotionManager class as an ObservedObject to use x, y and z when the update
     
