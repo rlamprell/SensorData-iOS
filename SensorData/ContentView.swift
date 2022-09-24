@@ -11,25 +11,56 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var motion: MotionManager
+    @State private var turnOn = true
+//    @State private var showGreeting = true
     // You need to instanciate your MotionManager class as an ObservedObject to use x, y and z when the update
     
     var body: some View {
+        
+        
+        //        HStack {
+        //            Button("Start") {
+        //                motion.start()
+        //            } .padding()
+        //
+        //            Button("Stop") {
+        //                motion.stop()
+        //            } .padding()
+        //        }
         HStack {
-            Button("Start") {
-                motion.start()
-            } .padding()
-            
-            Button("Stop") {
-                motion.stop()
-            } .padding()
+            Toggle(motion.getSensorName(), isOn: $turnOn)
+                .onChange(of: turnOn) { value in
+                    motion.start()
+            }
         }
         
-        VStack {
-            Text(motion.getSensorName())
+        HStack {
             Text("X: \(motion.x)")
             Text("Y: \(motion.y)")
             Text("Z: \(motion.z)")
         }
+        
+        //        Toggle("", isOn: $isDisplayed)
+        //            .onChange(of: isDisplayed) { value in
+        //                // action...
+        //                print(value)
+        //            }
+        //        VStack {
+        //            Toggle("Show welcome message", isOn: $showGreeting)
+        //
+        //            if showGreeting {
+        //                Text("Hello World!")
+        //            }
+        //        }
+        //    }
+        
+        //        VStack {
+        //            Text(motion.getSensorName())
+        //            Text("X: \(motion.x)")
+        //            Text("Y: \(motion.y)")
+        //            Text("Z: \(motion.z)")
+        //        }
+        //    }
     }
 }
 
