@@ -30,6 +30,11 @@ class MagnetManager: MotionManager {
     }
     
     
+    override func stop() {
+        self.motionManager.stopMagnetometerUpdates()
+    }
+    
+    
     override func getSensorName()->String {
         return "Magnet Data"
     }
@@ -55,6 +60,10 @@ class AccelerManager: MotionManager {
                 self.z = data.acceleration.z
             }
         }
+    }
+    
+    override func stop() {
+        self.motionManager.stopAccelerometerUpdates()
     }
     
     
@@ -87,8 +96,49 @@ class GyroManager: MotionManager {
     }
     
     
+    override func stop() {
+        self.motionManager.stopGyroUpdates()
+    }
+    
+    
     override func getSensorName()->String {
         return "Gyro Data"
+    }
+}
+
+
+
+
+class DeviceMotion: MotionManager {
+    override func setUpdateInterval(sensorUpdateRate: Float16) {
+        self.motionManager.deviceMotionUpdateInterval = 0.5
+    }
+    
+    
+    override func startUpdates() {
+        self.motionManager.startDeviceMotionUpdates(to: .main) { (data, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            if let data = data {
+//                print(data)
+                self.x = data.rotationRate.x
+                self.y = data.rotationRate.y
+                self.z = data.rotationRate.z
+                
+            }
+        }
+    }
+    
+    
+    override func stop() {
+        self.motionManager.stopDeviceMotionUpdates()
+    }
+    
+    
+    override func getSensorName()->String {
+        return "Device Motion Data"
     }
 }
 
@@ -98,7 +148,7 @@ class GyroManager: MotionManager {
 class MotionManager: ObservableObject {
     // MotionManager use the ObservableObject Combine property.
     var motionManager: CMMotionManager
-    
+
     @Published var x: Double = 0.0
     @Published var y: Double = 0.0
     @Published var z: Double = 0.0
@@ -107,9 +157,7 @@ class MotionManager: ObservableObject {
         self.startUpdates()
     }
 
-    func stop() {
-        motionManager.stopMagnetometerUpdates()
-    }
+    func stop() {}
     
     func setUpdateInterval(sensorUpdateRate: Float16) {}
     func startUpdates() {}
