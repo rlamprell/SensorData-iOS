@@ -15,6 +15,7 @@ struct ContentView: View {
 
     
     var body: some View {
+        
         HStack {
             Toggle(motion.getSensorName(), isOn: $turnOn)
               .onChange(of: turnOn) { value in
@@ -46,3 +47,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(motion: MotionManager())
     }
 }
+
