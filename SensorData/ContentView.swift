@@ -11,25 +11,22 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var motion: MotionManager
-    @State private var turnOn = false
-
+    @State private var turnedOn = false
     
     var body: some View {
-        
         HStack {
-            Toggle(motion.getSensorName(), isOn: $turnOn)
-              .onChange(of: turnOn) { value in
-                if turnOn{
+            Toggle(motion.getSensorName(), isOn: $turnedOn)
+              .onChange(of: turnedOn) { value in
+                  if turnedOn{
                     motion.start()
                 }
                 else {
                     motion.stop()
                 }
             }
-
         }
         
-        if turnOn{
+        if turnedOn{
             HStack {
                 Text("X: \(motion.x)")
                 Text("Y: \(motion.y)")

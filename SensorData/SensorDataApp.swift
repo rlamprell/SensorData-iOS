@@ -34,11 +34,12 @@ struct SensorDataApp: App {
 //            ContentView(motion: maggy)
 //            ContentView(motion: acc)
 //            ContentView(motion: gyro)
-            composite_view()
+//            composite_view()
 //            ContentView(motion: motion)
 //            StoryBoardView()
 //            AccelerometerView()
 //            mainViewerView()
+            testView()
         }
     }
 }

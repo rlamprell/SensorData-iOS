@@ -10,7 +10,6 @@
 		4B22B83628DC9CCB005F97CE /* SensorClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22B83528DC9CCB005F97CE /* SensorClasses.swift */; };
 		4B22B83828DC9E58005F97CE /* SocketIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B22B83728DC9E58005F97CE /* SocketIO.swift */; };
 		4B22B83B28DC9FAD005F97CE /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4B22B83A28DC9FAD005F97CE /* SocketIO */; };
-		4B22B83D28E3690C005F97CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B22B83C28E3690C005F97CE /* Main.storyboard */; };
 		4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */; };
 		4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488C328D9BAB70057B2E2 /* ContentView.swift */; };
 		4B4488C628D9BAB80057B2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4488C528D9BAB80057B2E2 /* Assets.xcassets */; };
@@ -22,6 +21,12 @@
 		4BB91BAD28F9FACF007E0A1C /* OnBoardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */; };
 		4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */; };
 		4BB91BB128FB1359007E0A1C /* composite_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB028FB1359007E0A1C /* composite_view.swift */; };
+		4BB91BB328FB1521007E0A1C /* fileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB228FB1521007E0A1C /* fileWriter.swift */; };
+		4BB91BB528FF3F73007E0A1C /* tabViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB428FF3F73007E0A1C /* tabViewTest.swift */; };
+		4BB91BB728FF40E9007E0A1C /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB628FF40E9007E0A1C /* testView.swift */; };
+		4BB91BB928FF42A4007E0A1C /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB828FF42A4007E0A1C /* TestView2.swift */; };
+		4BB91BBB28FF440E007E0A1C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBA28FF440E007E0A1C /* SettingsView.swift */; };
+		4BB91BBD28FF4430007E0A1C /* SensorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBC28FF4430007E0A1C /* SensorView.swift */; };
 		4BFF569628E36AF2005B3125 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF569528E36AF2005B3125 /* View.xib */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +50,6 @@
 /* Begin PBXFileReference section */
 		4B22B83528DC9CCB005F97CE /* SensorClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorClasses.swift; sourceTree = "<group>"; };
 		4B22B83728DC9E58005F97CE /* SocketIO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIO.swift; sourceTree = "<group>"; };
-		4B22B83C28E3690C005F97CE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4B4488BE28D9BAB70057B2E2 /* SensorData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataApp.swift; sourceTree = "<group>"; };
 		4B4488C328D9BAB70057B2E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,6 +64,12 @@
 		4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingFlowView.swift; sourceTree = "<group>"; };
 		4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowView.swift; sourceTree = "<group>"; };
 		4BB91BB028FB1359007E0A1C /* composite_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composite_view.swift; sourceTree = "<group>"; };
+		4BB91BB228FB1521007E0A1C /* fileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fileWriter.swift; sourceTree = "<group>"; };
+		4BB91BB428FF3F73007E0A1C /* tabViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabViewTest.swift; sourceTree = "<group>"; };
+		4BB91BB628FF40E9007E0A1C /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		4BB91BB828FF42A4007E0A1C /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
+		4BB91BBA28FF440E007E0A1C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4BB91BBC28FF4430007E0A1C /* SensorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorView.swift; sourceTree = "<group>"; };
 		4BFF569528E36AF2005B3125 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,17 +123,22 @@
 			isa = PBXGroup;
 			children = (
 				4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */,
+				4BB91BB228FB1521007E0A1C /* fileWriter.swift */,
 				4B4488C328D9BAB70057B2E2 /* ContentView.swift */,
 				4B22B83528DC9CCB005F97CE /* SensorClasses.swift */,
 				4B22B83728DC9E58005F97CE /* SocketIO.swift */,
 				4B4488C528D9BAB80057B2E2 /* Assets.xcassets */,
-				4B22B83C28E3690C005F97CE /* Main.storyboard */,
 				4BFF569528E36AF2005B3125 /* View.xib */,
 				4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */,
 				4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */,
 				4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */,
 				4B4488C728D9BAB80057B2E2 /* Preview Content */,
 				4BB91BB028FB1359007E0A1C /* composite_view.swift */,
+				4BB91BB428FF3F73007E0A1C /* tabViewTest.swift */,
+				4BB91BB628FF40E9007E0A1C /* testView.swift */,
+				4BB91BB828FF42A4007E0A1C /* TestView2.swift */,
+				4BB91BBC28FF4430007E0A1C /* SensorView.swift */,
+				4BB91BBA28FF440E007E0A1C /* SettingsView.swift */,
 			);
 			path = SensorData;
 			sourceTree = "<group>";
@@ -264,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BFF569628E36AF2005B3125 /* View.xib in Resources */,
-				4B22B83D28E3690C005F97CE /* Main.storyboard in Resources */,
 				4B4488C928D9BAB80057B2E2 /* Preview Assets.xcassets in Resources */,
 				4B4488C628D9BAB80057B2E2 /* Assets.xcassets in Resources */,
 			);
@@ -292,13 +306,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB91BAB28F9F9B1007E0A1C /* ViewController.swift in Sources */,
+				4BB91BB328FB1521007E0A1C /* fileWriter.swift in Sources */,
 				4BB91BAD28F9FACF007E0A1C /* OnBoardingFlowView.swift in Sources */,
 				4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */,
+				4BB91BB728FF40E9007E0A1C /* testView.swift in Sources */,
 				4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */,
 				4BB91BB128FB1359007E0A1C /* composite_view.swift in Sources */,
+				4BB91BB528FF3F73007E0A1C /* tabViewTest.swift in Sources */,
+				4BB91BBD28FF4430007E0A1C /* SensorView.swift in Sources */,
 				4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */,
 				4B22B83828DC9E58005F97CE /* SocketIO.swift in Sources */,
 				4B22B83628DC9CCB005F97CE /* SensorClasses.swift in Sources */,
+				4BB91BB928FF42A4007E0A1C /* TestView2.swift in Sources */,
+				4BB91BBB28FF440E007E0A1C /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
