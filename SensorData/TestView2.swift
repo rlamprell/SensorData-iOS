@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct TestView2: View {
+    let x = stacker()
     var body: some View {
-        Text("view 2")
+//        Text("view 2")
+        Text(x.vStacker())
+        
     }
 }
 

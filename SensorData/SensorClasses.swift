@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import CoreMotion
 
+
 class MagnetManager: MotionManager {
     override func setUpdateInterval(sensorUpdateRate: Float16) {
         self.motionManager.magnetometerUpdateInterval = 0.5
@@ -61,6 +62,7 @@ class AccelerManager: MotionManager {
             }
         }
     }
+    
     
     override func stop() {
         self.motionManager.stopAccelerometerUpdates()

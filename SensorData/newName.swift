@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct testView: View {
+struct newName: View {
+    @State private var name: String = "Tim"
     let maggy   = MagnetManager()
     let acc     = AccelerManager()
     let gyro    = GyroManager()
@@ -28,7 +29,7 @@ struct testView: View {
                 .opacity(0.5)
                 
             VStack {
-                Text("view 1")
+                Text("Sensor Data")
 //                    .background(.black)
                     .foregroundColor(.white)
                     .frame(maxHeight: .infinity,
@@ -47,12 +48,23 @@ struct testView: View {
                    alignment: .top)
             .offset(y: 60)
 //            .font(.title)
+            
+            
+            VStack(alignment: .leading) {
+                TextField("Enter your name", text: $name)
+                Text("Hello, \(name)!")
+            }
+            .background(.black)
+            .foregroundColor(.white)
+            .padding(1)
+            
+            
         }
     }
 }
 
 struct testView_Previews: PreviewProvider {
     static var previews: some View {
-        testView()
+        newName()
     }
 }

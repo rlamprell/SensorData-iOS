@@ -39,7 +39,7 @@ struct SensorDataApp: App {
 //            StoryBoardView()
 //            AccelerometerView()
 //            mainViewerView()
-            testView()
+            newName()
         }
     }
 }

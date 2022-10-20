@@ -10,12 +10,12 @@ import SwiftUI
 struct tabViewTest: View {
     var body: some View {
         TabView {
-            SensorView()
+            newName()
                 .tabItem{ Text("Sensors") }
                 .tag(1)
             SettingsView()
-                .tabItem{ Text("Settings") }
                 .tag(2)
+                .tabItem{ Text("Settings") }
         }
     }
 }
@@ -23,5 +23,6 @@ struct tabViewTest: View {
 struct tabViewTest_Previews: PreviewProvider {
     static var previews: some View {
         tabViewTest()
+        SettingsView()
     }
 }
