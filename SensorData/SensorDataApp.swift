@@ -8,17 +8,17 @@
 import SwiftUI
 
 // observable
-class AppState: ObservableObject {
-    @Published var hasOnboarded: Bool
-    
-    init(hasOnboarded: Bool) {
-        self.hasOnboarded = hasOnboarded
-    }
-}
+//class AppState: ObservableObject {
+//    @Published var hasOnboarded: Bool
+//    
+//    init(hasOnboarded: Bool) {
+//        self.hasOnboarded = hasOnboarded
+//    }
+//}
 
 @main
 struct SensorDataApp: App {
-    @ObservedObject var appState = AppState(hasOnboarded: false)
+//    @ObservedObject var appState = AppState(hasOnboarded: false)
     
     var body: some Scene {
         WindowGroup {
@@ -29,17 +29,18 @@ struct SensorDataApp: App {
 //            ViewController()
 //            let maggy = MagnetManager()
 //            let acc = AccelerManager()
-//            let gyro = GyroManager()
-//            let motion = DeviceMotion()
-//            ContentView(motion: maggy)
-//            ContentView(motion: acc)
+////            let gyro = GyroManager()
+////            let motion = DeviceMotion()
+//            MotionTitleButtonView(motion: maggy)
+//            MotionTitleButtonView(motion: acc)
 //            ContentView(motion: gyro)
 //            composite_view()
 //            ContentView(motion: motion)
 //            StoryBoardView()
 //            AccelerometerView()
 //            mainViewerView()
-            newName()
+//            newName()
+            MainTabView()
         }
     }
 }

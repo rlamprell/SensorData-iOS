@@ -12,8 +12,6 @@
 		4B22B83B28DC9FAD005F97CE /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 4B22B83A28DC9FAD005F97CE /* SocketIO */; };
 		4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */; };
 		4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488C328D9BAB70057B2E2 /* ContentView.swift */; };
-		4B4488C628D9BAB80057B2E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4488C528D9BAB80057B2E2 /* Assets.xcassets */; };
-		4B4488C928D9BAB80057B2E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4488C828D9BAB80057B2E2 /* Preview Assets.xcassets */; };
 		4B4488D328D9BAB80057B2E2 /* SensorDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488D228D9BAB80057B2E2 /* SensorDataTests.swift */; };
 		4B4488DD28D9BAB80057B2E2 /* SensorDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488DC28D9BAB80057B2E2 /* SensorDataUITests.swift */; };
 		4B4488DF28D9BAB80057B2E2 /* SensorDataUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4488DE28D9BAB80057B2E2 /* SensorDataUITestsLaunchTests.swift */; };
@@ -22,13 +20,14 @@
 		4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */; };
 		4BB91BB128FB1359007E0A1C /* composite_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB028FB1359007E0A1C /* composite_view.swift */; };
 		4BB91BB328FB1521007E0A1C /* fileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB228FB1521007E0A1C /* fileWriter.swift */; };
-		4BB91BB528FF3F73007E0A1C /* tabViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB428FF3F73007E0A1C /* tabViewTest.swift */; };
-		4BB91BB728FF40E9007E0A1C /* newName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB628FF40E9007E0A1C /* newName.swift */; };
+		4BB91BB528FF3F73007E0A1C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB428FF3F73007E0A1C /* MainTabView.swift */; };
+		4BB91BB728FF40E9007E0A1C /* MainSensorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB628FF40E9007E0A1C /* MainSensorView.swift */; };
 		4BB91BB928FF42A4007E0A1C /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB828FF42A4007E0A1C /* TestView2.swift */; };
 		4BB91BBB28FF440E007E0A1C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBA28FF440E007E0A1C /* SettingsView.swift */; };
 		4BB91BBD28FF4430007E0A1C /* SensorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBC28FF4430007E0A1C /* SensorView.swift */; };
 		4BB91BBF2901E5AF007E0A1C /* structTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBE2901E5AF007E0A1C /* structTester.swift */; };
-		4BFF569628E36AF2005B3125 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BFF569528E36AF2005B3125 /* View.xib */; };
+		4BB91BC42905DED5007E0A1C /* MotionTitleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */; };
+		4BB91BC82905E47F007E0A1C /* MotionDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC72905E47F007E0A1C /* MotionDataView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +53,6 @@
 		4B4488BE28D9BAB70057B2E2 /* SensorData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataApp.swift; sourceTree = "<group>"; };
 		4B4488C328D9BAB70057B2E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		4B4488C528D9BAB80057B2E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B4488C828D9BAB80057B2E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B4488CE28D9BAB80057B2E2 /* SensorDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4488D228D9BAB80057B2E2 /* SensorDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataTests.swift; sourceTree = "<group>"; };
 		4B4488D828D9BAB80057B2E2 /* SensorDataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorDataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,13 +63,14 @@
 		4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowView.swift; sourceTree = "<group>"; };
 		4BB91BB028FB1359007E0A1C /* composite_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composite_view.swift; sourceTree = "<group>"; };
 		4BB91BB228FB1521007E0A1C /* fileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fileWriter.swift; sourceTree = "<group>"; };
-		4BB91BB428FF3F73007E0A1C /* tabViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabViewTest.swift; sourceTree = "<group>"; };
-		4BB91BB628FF40E9007E0A1C /* newName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newName.swift; sourceTree = "<group>"; };
+		4BB91BB428FF3F73007E0A1C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		4BB91BB628FF40E9007E0A1C /* MainSensorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSensorView.swift; sourceTree = "<group>"; };
 		4BB91BB828FF42A4007E0A1C /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		4BB91BBA28FF440E007E0A1C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4BB91BBC28FF4430007E0A1C /* SensorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorView.swift; sourceTree = "<group>"; };
 		4BB91BBE2901E5AF007E0A1C /* structTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structTester.swift; sourceTree = "<group>"; };
-		4BFF569528E36AF2005B3125 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTitleButtonView.swift; sourceTree = "<group>"; };
+		4BB91BC72905E47F007E0A1C /* MotionDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDataView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,33 +123,13 @@
 			isa = PBXGroup;
 			children = (
 				4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */,
-				4BB91BB228FB1521007E0A1C /* fileWriter.swift */,
-				4B4488C328D9BAB70057B2E2 /* ContentView.swift */,
-				4B22B83528DC9CCB005F97CE /* SensorClasses.swift */,
-				4B22B83728DC9E58005F97CE /* SocketIO.swift */,
-				4B4488C528D9BAB80057B2E2 /* Assets.xcassets */,
-				4BFF569528E36AF2005B3125 /* View.xib */,
-				4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */,
-				4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */,
-				4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */,
-				4B4488C728D9BAB80057B2E2 /* Preview Content */,
-				4BB91BB028FB1359007E0A1C /* composite_view.swift */,
-				4BB91BB428FF3F73007E0A1C /* tabViewTest.swift */,
-				4BB91BB628FF40E9007E0A1C /* newName.swift */,
-				4BB91BBE2901E5AF007E0A1C /* structTester.swift */,
-				4BB91BB828FF42A4007E0A1C /* TestView2.swift */,
-				4BB91BBC28FF4430007E0A1C /* SensorView.swift */,
+				4BB91BB428FF3F73007E0A1C /* MainTabView.swift */,
+				4BB91BB628FF40E9007E0A1C /* MainSensorView.swift */,
 				4BB91BBA28FF440E007E0A1C /* SettingsView.swift */,
+				4BB91BC22905DCA9007E0A1C /* src */,
+				4BB91BC12905DC9D007E0A1C /* tests */,
 			);
 			path = SensorData;
-			sourceTree = "<group>";
-		};
-		4B4488C728D9BAB80057B2E2 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				4B4488C828D9BAB80057B2E2 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		4B4488D128D9BAB80057B2E2 /* SensorDataTests */ = {
@@ -169,6 +147,57 @@
 				4B4488DE28D9BAB80057B2E2 /* SensorDataUITestsLaunchTests.swift */,
 			);
 			path = SensorDataUITests;
+			sourceTree = "<group>";
+		};
+		4BB91BC02905DC15007E0A1C /* io */ = {
+			isa = PBXGroup;
+			children = (
+				4BB91BB228FB1521007E0A1C /* fileWriter.swift */,
+				4B22B83728DC9E58005F97CE /* SocketIO.swift */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		4BB91BC12905DC9D007E0A1C /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				4B4488C328D9BAB70057B2E2 /* ContentView.swift */,
+				4BB91BB828FF42A4007E0A1C /* TestView2.swift */,
+				4BB91BBE2901E5AF007E0A1C /* structTester.swift */,
+				4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */,
+				4BB91BB028FB1359007E0A1C /* composite_view.swift */,
+				4BB91BBC28FF4430007E0A1C /* SensorView.swift */,
+				4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */,
+				4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		4BB91BC22905DCA9007E0A1C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4BB91BC62905E0BE007E0A1C /* main */,
+				4BB91BC52905DF84007E0A1C /* sensors */,
+				4BB91BC02905DC15007E0A1C /* io */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		4BB91BC52905DF84007E0A1C /* sensors */ = {
+			isa = PBXGroup;
+			children = (
+				4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */,
+				4BB91BC72905E47F007E0A1C /* MotionDataView.swift */,
+				4B22B83528DC9CCB005F97CE /* SensorClasses.swift */,
+			);
+			path = sensors;
+			sourceTree = "<group>";
+		};
+		4BB91BC62905E0BE007E0A1C /* main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +310,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BFF569628E36AF2005B3125 /* View.xib in Resources */,
-				4B4488C928D9BAB80057B2E2 /* Preview Assets.xcassets in Resources */,
-				4B4488C628D9BAB80057B2E2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,14 +338,16 @@
 				4BB91BB328FB1521007E0A1C /* fileWriter.swift in Sources */,
 				4BB91BAD28F9FACF007E0A1C /* OnBoardingFlowView.swift in Sources */,
 				4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */,
-				4BB91BB728FF40E9007E0A1C /* newName.swift in Sources */,
+				4BB91BB728FF40E9007E0A1C /* MainSensorView.swift in Sources */,
+				4BB91BC42905DED5007E0A1C /* MotionTitleButtonView.swift in Sources */,
 				4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */,
 				4BB91BB128FB1359007E0A1C /* composite_view.swift in Sources */,
-				4BB91BB528FF3F73007E0A1C /* tabViewTest.swift in Sources */,
+				4BB91BB528FF3F73007E0A1C /* MainTabView.swift in Sources */,
 				4BB91BBD28FF4430007E0A1C /* SensorView.swift in Sources */,
 				4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */,
 				4B22B83828DC9E58005F97CE /* SocketIO.swift in Sources */,
 				4B22B83628DC9CCB005F97CE /* SensorClasses.swift in Sources */,
+				4BB91BC82905E47F007E0A1C /* MotionDataView.swift in Sources */,
 				4BB91BB928FF42A4007E0A1C /* TestView2.swift in Sources */,
 				4BB91BBF2901E5AF007E0A1C /* structTester.swift in Sources */,
 				4BB91BBB28FF440E007E0A1C /* SettingsView.swift in Sources */,

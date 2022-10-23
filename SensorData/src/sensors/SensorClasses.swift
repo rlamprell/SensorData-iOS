@@ -124,11 +124,9 @@ class DeviceMotion: MotionManager {
                 return
             }
             if let data = data {
-//                print(data)
                 self.x = data.rotationRate.x
                 self.y = data.rotationRate.y
                 self.z = data.rotationRate.z
-                
             }
         }
     }
@@ -149,7 +147,7 @@ class DeviceMotion: MotionManager {
 
 class MotionManager: ObservableObject {
     // MotionManager use the ObservableObject Combine property.
-    var motionManager: CMMotionManager
+    let motionManager: CMMotionManager
 
     @Published var x: Double = 0.0
     @Published var y: Double = 0.0
@@ -160,7 +158,6 @@ class MotionManager: ObservableObject {
     }
 
     func stop() {}
-    
     func setUpdateInterval(sensorUpdateRate: Float16) {}
     func startUpdates() {}
     func getSensorName()->String { return "" }

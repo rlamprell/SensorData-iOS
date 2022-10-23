@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct newName: View {
+
+struct MainSensorView: View {
     @State private var name: String = "Tim"
-    let maggy   = MagnetManager()
-    let acc     = AccelerManager()
-    let gyro    = GyroManager()
-    let motion  = DeviceMotion()
+    let screenBounds    = UIScreen.main.bounds
+    let screenWidth     = UIScreen.main.bounds.width
+    
+    @StateObject var maggy           = MagnetManager()
+    let acc             = AccelerManager()
+    let gyro            = GyroManager()
+    let motion          = DeviceMotion()
     var body: some View {
         ZStack {
             Color.black
@@ -38,10 +42,10 @@ struct newName: View {
             }
             
             VStack {
-                ContentView(motion: maggy)
-                ContentView(motion: acc)
-                ContentView(motion: gyro)
-                ContentView(motion: motion)
+                MotionTitleButtonView(motion: maggy)
+                MotionTitleButtonView(motion: acc)
+                MotionTitleButtonView(motion: gyro)
+                MotionTitleButtonView(motion: motion)
             }
             .padding(.horizontal, 16)
             .frame(maxHeight: .infinity,
@@ -51,12 +55,24 @@ struct newName: View {
             
             
             VStack(alignment: .leading) {
+                Spacer()
+                    .frame(minWidth: screenWidth-15, maxWidth: .infinity)
+                    
                 TextField("Enter your name", text: $name)
+                    .padding(.horizontal, 15)
+                    .padding(.top, 10)
                 Text("Hello, \(name)!")
+                    .padding(.horizontal, 15)
+                    .padding(.bottom, 10)
+
             }
             .background(.black)
             .foregroundColor(.white)
-            .padding(1)
+            .frame(maxHeight: .infinity,
+                   alignment: .bottom)
+            .padding(.horizontal, 15)
+            .padding(.bottom, 5)
+            .fixedSize(horizontal: true, vertical: true)
             
             
         }
@@ -65,6 +81,6 @@ struct newName: View {
 
 struct testView_Previews: PreviewProvider {
     static var previews: some View {
-        newName()
+        MainSensorView()
     }
 }
