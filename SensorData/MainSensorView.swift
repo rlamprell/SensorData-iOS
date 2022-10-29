@@ -19,13 +19,16 @@ struct MainSensorView: View {
     @StateObject var motion = DeviceMotion()
     
 //    @State var x = MotionTitleButtonView(motion: MagnetManager())
-    @State private var ison = false
-
+    @State private var isMagOn = false
+    @State private var isAccOn = false
+    @State private var isGyrOn = false
     
 //    var maggys  = MagnetManager()
     @State var myValue = true
     var body: some View {
-        var x = MotionTitleButtonView(motion: maggy, turnedOn: $ison)
+        let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
+        let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
+        let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
 //        let x = MotionTitleButtonView(motion: maggy)
 //        let x_on = x.turnedOn
 //        let x_on = Bool(x.turnedOn!) ?? false
@@ -57,7 +60,9 @@ struct MainSensorView: View {
             
             VStack {
 //                x
-                x
+                magSensorInstance
+                accSensorInstance
+                gyrSensorInstance
 //                MotionTitleButtonView(motion: maggy)
 //                MotionTitleButtonView(motion: acc)
 //                MotionTitleButtonView(motion: gyro)
@@ -72,7 +77,9 @@ struct MainSensorView: View {
 //            .font(.title)
             
             VStack {
-                MotionDataView(motion: x.motion, turnedOn: x.$turnedOn)
+                MotionDataView(motion: magSensorInstance.motion, turnedOn: magSensorInstance.$turnedOn)
+                MotionDataView(motion: accSensorInstance.motion, turnedOn: accSensorInstance.$turnedOn)
+                MotionDataView(motion: gyrSensorInstance.motion, turnedOn: gyrSensorInstance.$turnedOn)
 //                MotionDataView(motion: maggy, isTurnedOn: x.$turnedOn)
 //                MotionTitleButtonView(motion: acc)
 //                MotionTitleButtonView(motion: gyro)
