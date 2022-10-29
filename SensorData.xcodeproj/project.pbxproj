@@ -28,6 +28,10 @@
 		4BB91BBF2901E5AF007E0A1C /* structTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBE2901E5AF007E0A1C /* structTester.swift */; };
 		4BB91BC42905DED5007E0A1C /* MotionTitleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */; };
 		4BB91BC82905E47F007E0A1C /* MotionDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC72905E47F007E0A1C /* MotionDataView.swift */; };
+		4BB91BCA2905EBF6007E0A1C /* testerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC92905EBF6007E0A1C /* testerView.swift */; };
+		4BB91BCC29085CB9007E0A1C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BCB29085CB9007E0A1C /* CardView.swift */; };
+		4BB91BCE2908615B007E0A1C /* CardWideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BCD2908615B007E0A1C /* CardWideView.swift */; };
+		4BB91BD0290865D0007E0A1C /* shapeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BCF290865D0007E0A1C /* shapeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		4BB91BBE2901E5AF007E0A1C /* structTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structTester.swift; sourceTree = "<group>"; };
 		4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTitleButtonView.swift; sourceTree = "<group>"; };
 		4BB91BC72905E47F007E0A1C /* MotionDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDataView.swift; sourceTree = "<group>"; };
+		4BB91BC92905EBF6007E0A1C /* testerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testerView.swift; sourceTree = "<group>"; };
+		4BB91BCB29085CB9007E0A1C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4BB91BCD2908615B007E0A1C /* CardWideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWideView.swift; sourceTree = "<group>"; };
+		4BB91BCF290865D0007E0A1C /* shapeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shapeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,10 @@
 				4BB91BB428FF3F73007E0A1C /* MainTabView.swift */,
 				4BB91BB628FF40E9007E0A1C /* MainSensorView.swift */,
 				4BB91BBA28FF440E007E0A1C /* SettingsView.swift */,
+				4BB91BC92905EBF6007E0A1C /* testerView.swift */,
+				4BB91BCB29085CB9007E0A1C /* CardView.swift */,
+				4BB91BCD2908615B007E0A1C /* CardWideView.swift */,
+				4BB91BCF290865D0007E0A1C /* shapeStruct.swift */,
 				4BB91BC22905DCA9007E0A1C /* src */,
 				4BB91BC12905DC9D007E0A1C /* tests */,
 			);
@@ -335,11 +347,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB91BAB28F9F9B1007E0A1C /* ViewController.swift in Sources */,
+				4BB91BCA2905EBF6007E0A1C /* testerView.swift in Sources */,
 				4BB91BB328FB1521007E0A1C /* fileWriter.swift in Sources */,
 				4BB91BAD28F9FACF007E0A1C /* OnBoardingFlowView.swift in Sources */,
 				4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */,
 				4BB91BB728FF40E9007E0A1C /* MainSensorView.swift in Sources */,
 				4BB91BC42905DED5007E0A1C /* MotionTitleButtonView.swift in Sources */,
+				4BB91BCC29085CB9007E0A1C /* CardView.swift in Sources */,
 				4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */,
 				4BB91BB128FB1359007E0A1C /* composite_view.swift in Sources */,
 				4BB91BB528FF3F73007E0A1C /* MainTabView.swift in Sources */,
@@ -347,7 +361,9 @@
 				4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */,
 				4B22B83828DC9E58005F97CE /* SocketIO.swift in Sources */,
 				4B22B83628DC9CCB005F97CE /* SensorClasses.swift in Sources */,
+				4BB91BCE2908615B007E0A1C /* CardWideView.swift in Sources */,
 				4BB91BC82905E47F007E0A1C /* MotionDataView.swift in Sources */,
+				4BB91BD0290865D0007E0A1C /* shapeStruct.swift in Sources */,
 				4BB91BB928FF42A4007E0A1C /* TestView2.swift in Sources */,
 				4BB91BBF2901E5AF007E0A1C /* structTester.swift in Sources */,
 				4BB91BBB28FF440E007E0A1C /* SettingsView.swift in Sources */,

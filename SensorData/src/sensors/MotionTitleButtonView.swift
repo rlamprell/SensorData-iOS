@@ -19,7 +19,7 @@ import SwiftUI
 struct MotionTitleButtonView: View {
     
     @ObservedObject var motion: MotionManager
-    @State private var turnedOn = false
+    @Binding var turnedOn: Bool // = false
     
     var body: some View {
         HStack {
@@ -34,13 +34,16 @@ struct MotionTitleButtonView: View {
             }
         }
         
-//        if turnedOn{
-//            HStack {
-//                Text("X: \(motion.x)")
-//                Text("Y: \(motion.y)")
-//                Text("Z: \(motion.z)")
-//            }
-//        }
+        
+        
+        if turnedOn{
+            HStack {
+                Text("X: \(motion.x)")
+                Text("Y: \(motion.y)")
+                Text("Z: \(motion.z)")
+                Text("on: \(turnedOn)" as String)
+            }
+        }
     }
 }
 
@@ -49,6 +52,6 @@ struct MotionTitleButtonView: View {
 
 struct MotionTitleButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(motion: MotionManager())
+        ContentView(motion: MagnetManager())
     }
 }

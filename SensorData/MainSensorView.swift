@@ -10,14 +10,26 @@ import SwiftUI
 
 struct MainSensorView: View {
     @State private var name: String = "Tim"
-    let screenBounds    = UIScreen.main.bounds
-    let screenWidth     = UIScreen.main.bounds.width
+    let screenBounds        = UIScreen.main.bounds
+    let screenWidth         = UIScreen.main.bounds.width
     
-    @StateObject var maggy           = MagnetManager()
-    let acc             = AccelerManager()
-    let gyro            = GyroManager()
-    let motion          = DeviceMotion()
+    @StateObject var maggy  = MagnetManager()
+    @StateObject var acc    = AccelerManager()
+    @StateObject var gyro   = GyroManager()
+    @StateObject var motion = DeviceMotion()
+    
+//    @State var x = MotionTitleButtonView(motion: MagnetManager())
+    @State private var ison = false
+
+    
+//    var maggys  = MagnetManager()
+    @State var myValue = true
     var body: some View {
+        var x = MotionTitleButtonView(motion: maggy, turnedOn: $ison)
+//        let x = MotionTitleButtonView(motion: maggy)
+//        let x_on = x.turnedOn
+//        let x_on = Bool(x.turnedOn!) ?? false
+//        var x_on = x.turnedOn
         ZStack {
             Color.black
                 .padding(.horizontal, 16)
@@ -41,11 +53,17 @@ struct MainSensorView: View {
                     .font(.largeTitle)
             }
             
+            
+            
             VStack {
-                MotionTitleButtonView(motion: maggy)
-                MotionTitleButtonView(motion: acc)
-                MotionTitleButtonView(motion: gyro)
-                MotionTitleButtonView(motion: motion)
+//                x
+                x
+//                MotionTitleButtonView(motion: maggy)
+//                MotionTitleButtonView(motion: acc)
+//                MotionTitleButtonView(motion: gyro)
+//                MotionTitleButtonView(motion: motion)
+//                Text("\(x.turnedOn)" as String)
+//                maggy.getSensorName()
             }
             .padding(.horizontal, 16)
             .frame(maxHeight: .infinity,
@@ -53,26 +71,33 @@ struct MainSensorView: View {
             .offset(y: 60)
 //            .font(.title)
             
-            
-            VStack(alignment: .leading) {
-                Spacer()
-                    .frame(minWidth: screenWidth-15, maxWidth: .infinity)
-                    
-                TextField("Enter your name", text: $name)
-                    .padding(.horizontal, 15)
-                    .padding(.top, 10)
-                Text("Hello, \(name)!")
-                    .padding(.horizontal, 15)
-                    .padding(.bottom, 10)
-
+            VStack {
+                MotionDataView(motion: x.motion, turnedOn: x.$turnedOn)
+//                MotionDataView(motion: maggy, isTurnedOn: x.$turnedOn)
+//                MotionTitleButtonView(motion: acc)
+//                MotionTitleButtonView(motion: gyro)
+//                MotionTitleButtonView(motion: motion)
             }
-            .background(.black)
-            .foregroundColor(.white)
-            .frame(maxHeight: .infinity,
-                   alignment: .bottom)
-            .padding(.horizontal, 15)
-            .padding(.bottom, 5)
-            .fixedSize(horizontal: true, vertical: true)
+            
+//            VStack(alignment: .leading) {
+//                Spacer()
+//                    .frame(minWidth: screenWidth-15, maxWidth: .infinity)
+//
+//                TextField("Enter your name", text: $name)
+//                    .padding(.horizontal, 15)
+//                    .padding(.top, 10)
+//                Text("Hello, \(name)!")
+//                    .padding(.horizontal, 15)
+//                    .padding(.bottom, 10)
+
+//            }
+//            .background(.black)
+//            .foregroundColor(.white)
+//            .frame(maxHeight: .infinity,
+//                   alignment: .bottom)
+//            .padding(.horizontal, 15)
+//            .padding(.bottom, 5)
+//            .fixedSize(horizontal: true, vertical: true)
             
             
         }

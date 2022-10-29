@@ -146,7 +146,6 @@ class DeviceMotion: MotionManager {
 
 
 class MotionManager: ObservableObject {
-    // MotionManager use the ObservableObject Combine property.
     let motionManager: CMMotionManager
 
     @Published var x: Double = 0.0

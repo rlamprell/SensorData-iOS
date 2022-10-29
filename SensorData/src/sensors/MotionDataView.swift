@@ -11,10 +11,16 @@ import SwiftUI
 
 struct MotionDataView: View {
     @ObservedObject var motion: MotionManager
-    @Binding var isTurnedOn: Bool
+//    @ObservedObject var motion: MotionTitleButtonView
+    @Binding var turnedOn: Bool
     
     var body: some View {
-        if isTurnedOn{
+        HStack {
+            Text("X: \(motion.x)")
+            Text("\(turnedOn)" as String)
+        }
+        
+        if turnedOn{
             HStack {
                 Text("X: \(motion.x)")
                 Text("Y: \(motion.y)")
