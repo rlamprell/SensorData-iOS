@@ -27,7 +27,24 @@ struct RoundedCorner: Shape {
 }
 
 
-struct complete_CombinedCardView: View {
+class screenDims {
+    let screenWidth:    CGFloat
+    let screenHeight:   CGFloat
+    let topCardHeight:  CGFloat
+    let botCardHeight:  CGFloat
+    let botPadding:     CGFloat
+
+    init(){
+        self.screenWidth     = UIScreen.main.bounds.size.width
+        self.screenHeight    = UIScreen.main.bounds.size.height
+        self.topCardHeight   = CGFloat(Int(self.screenHeight/1.25))
+        self.botPadding      = 40.0
+        self.botCardHeight   = self.screenHeight - self.topCardHeight + self.botPadding
+    }
+}
+
+
+struct CombinedCardView: View {
     @StateObject var maggy  = MagnetManager()
     @StateObject var acc    = AccelerManager()
     @StateObject var gyro   = GyroManager()
@@ -35,6 +52,12 @@ struct complete_CombinedCardView: View {
     @State private var isMagOn = false
     @State private var isAccOn = false
     @State private var isGyrOn = false
+    
+    public let screenHeight     = screenDims().screenHeight
+    public let screenWidth      = screenDims().screenWidth
+    public let topCardHeight    = screenDims().topCardHeight
+    public let botCardHeight    = screenDims().botCardHeight
+    
     var body: some View {
         let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
         let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
@@ -51,12 +74,11 @@ struct complete_CombinedCardView: View {
 }
 
 
-
 struct CardWideView: View {
     let magSensorInstance: MotionTitleButtonView
     let accSensorInstance: MotionTitleButtonView
     let gyrSensorInstance: MotionTitleButtonView
-    let screenWidth = UIScreen.main.bounds.size.width
+    let screenWidth = screenDims().screenWidth
 
     var body: some View {
         VStack(spacing: 28) {
@@ -76,7 +98,7 @@ struct CardWideView: View {
         }
         .foregroundColor(.white)
         .padding(16)
-        .frame(width: screenWidth, height: 675, alignment: .top)
+        .frame(width: screenWidth, height: screenDims().topCardHeight, alignment: .top)
         .background(LinearGradient(
             gradient: Gradient(stops: [
                 .init(color: Color(.purple).opacity(1),
@@ -104,26 +126,25 @@ struct CardWideTextView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(spacing: 8) {
+            Text("Output:")
+                .font(.title)
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
             MotionDataView(motion: magSensorInstance.motion, turnedOn: magSensorInstance.$turnedOn)
             MotionDataView(motion: accSensorInstance.motion, turnedOn: accSensorInstance.$turnedOn)
             MotionDataView(motion: gyrSensorInstance.motion, turnedOn: gyrSensorInstance.$turnedOn)
-            
-            Text("text1")
-                .font(.title)
-                .fontWeight(.bold)
-            Text("some other text")
-                .lineLimit(2)
-                .opacity(0.7)
+            Spacer()
         }
         .foregroundColor(.white)
         .padding(16)
-        .frame(width: screenWidth, height: 300)
+        .padding(.top, 60)
+        .frame(width: screenWidth, height: screenDims().botCardHeight)
         .background(LinearGradient(
             gradient: Gradient(stops: [
                 .init(color: Color(.blue).opacity(0.6),
                       location: 0),
-                .init(color: Color(.white).opacity(0.6),
+                .init(color: Color(.blue).opacity(0.6),
                       location: 1)]),
             startPoint: UnitPoint(x:0.5, y:3.08e-1), endPoint: UnitPoint(x:-0.001, y:0.977)))
         .frame(maxHeight: .infinity,
@@ -136,6 +157,6 @@ struct CardWideTextView: View {
 
 struct CardWideView_Previews: PreviewProvider {
     static var previews: some View {
-        complete_CombinedCardView()
+        CombinedCardView()
     }
 }

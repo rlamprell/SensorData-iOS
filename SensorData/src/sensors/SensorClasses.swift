@@ -161,7 +161,7 @@ class MotionManager: ObservableObject {
     func startUpdates() {}
     func getSensorName()->String { return "" }
     
-    init(sensorUpdateRate: Float16 = 0.5) {
+    init(sensorUpdateRate: Float16 = 0.10) {
         self.motionManager = CMMotionManager()
         self.setUpdateInterval(sensorUpdateRate: sensorUpdateRate)
     }
