@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
@@ -27,20 +28,43 @@ struct RoundedCorner: Shape {
 
 
 struct CardWideView: View {
+    
+    
+    @StateObject var maggy  = MagnetManager()
+    @StateObject var acc    = AccelerManager()
+    @StateObject var gyro   = GyroManager()
+    
+//    @State var x = MotionTitleButtonView(motion: MagnetManager())
+    @State private var isMagOn = false
+    @State private var isAccOn = false
+    @State private var isGyrOn = false
     let screenWidth = UIScreen.main.bounds.size.width
 
     var body: some View {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("text1")
-                    .font(.title)
+        
+        let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
+        let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
+        let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
+        
+            VStack(spacing: 28) {
+                Text("Sensor Data")
+                    .font(.largeTitle)
                     .fontWeight(.bold)
-                Text("some other text")
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 50)
+//                    .frame(minHeight:400, alignment: .top)
+                Text("Enable sensors for tracking:")
+                    .font(.title3)
                     .lineLimit(2)
                     .opacity(0.7)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                magSensorInstance
+                accSensorInstance
+                gyrSensorInstance
             }
             .foregroundColor(.white)
             .padding(16)
-            .frame(width: screenWidth, height: 625)
+            .frame(width: screenWidth, height: 675, alignment: .top)
             .background(LinearGradient(
                 gradient: Gradient(stops: [
                     .init(color: Color(.purple).opacity(1),
@@ -49,7 +73,11 @@ struct CardWideView: View {
                           location: 1)]),
                 startPoint: UnitPoint(x:0.5, y:3.08e-1), endPoint: UnitPoint(x:-0.001, y:0.977)))
             .cornerRadius(68, corners: [.bottomLeft, .bottomRight])
-            //        .frame(alignment: .top)
+            .overlay(
+                RoundedRectangle(cornerRadius: 68)
+                    .stroke(.green, lineWidth: 10)
+                    .cornerRadius(900, corners: [.topLeft, .bottomRight, .topRight])
+            )
             .frame(maxHeight: .infinity,
                    alignment: .top)
             .edgesIgnoringSafeArea(.all)
@@ -58,10 +86,24 @@ struct CardWideView: View {
 
 
 struct CardWideTextView: View {
-    let screenWidth = UIScreen.main.bounds.size.width
+//    @ObservedObject var magSensorInstance: MotionManager
+//    magSensorInstance
+    
 
+    
+    let screenWidth = UIScreen.main.bounds.size.width
+    
+    
+    
     var body: some View {
+        
+
             VStack(alignment: .leading, spacing: 8) {
+
+//                MotionDataView(motion: magSensorInstance.motion, turnedOn: magSensorInstance.$turnedOn)
+//                MotionDataView(motion: accSensorInstance.motion, turnedOn: accSensorInstance.$turnedOn)
+//                MotionDataView(motion: gyrSensorInstance.motion, turnedOn: gyrSensorInstance.$turnedOn)
+                
                 Text("text1")
                     .font(.title)
                     .fontWeight(.bold)
@@ -71,7 +113,7 @@ struct CardWideTextView: View {
             }
             .foregroundColor(.white)
             .padding(16)
-            .frame(width: screenWidth, height: 550)
+            .frame(width: screenWidth, height: 300)
             .background(LinearGradient(
                 gradient: Gradient(stops: [
                     .init(color: Color(.blue).opacity(0.6),
@@ -79,9 +121,6 @@ struct CardWideTextView: View {
                     .init(color: Color(.white).opacity(0.6),
                           location: 1)]),
                 startPoint: UnitPoint(x:0.5, y:3.08e-1), endPoint: UnitPoint(x:-0.001, y:0.977)))
-            
-//            .cornerRadius(68, corners: [.bottomLeft, .bottomRight])
-            //        .frame(alignment: .top)
             .frame(maxHeight: .infinity,
                    alignment: .bottom)
 

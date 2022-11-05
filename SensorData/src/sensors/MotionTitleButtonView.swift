@@ -36,14 +36,14 @@ struct MotionTitleButtonView: View {
         
         
         
-        if turnedOn{
-            HStack {
-                Text("X: \(motion.x)")
-                Text("Y: \(motion.y)")
-                Text("Z: \(motion.z)")
-                Text("on: \(turnedOn)" as String)
-            }
-        }
+//        if turnedOn{
+//            HStack {
+//                Text("X: \(motion.x)")
+//                Text("Y: \(motion.y)")
+//                Text("Z: \(motion.z)")
+////                Text("on: \(turnedOn)" as String)
+//            }
+//        }
     }
 }
 

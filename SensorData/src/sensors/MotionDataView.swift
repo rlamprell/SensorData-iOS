@@ -15,10 +15,10 @@ struct MotionDataView: View {
     @Binding var turnedOn: Bool
     
     var body: some View {
-        HStack {
-            Text("X: \(motion.x)")
-            Text("\(turnedOn)" as String)
-        }
+//        HStack {
+//            Text("X: \(motion.x)")
+////            Text("\(turnedOn)" as String)
+//        }
         
         if turnedOn{
             HStack {
