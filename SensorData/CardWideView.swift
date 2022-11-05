@@ -27,24 +27,53 @@ struct RoundedCorner: Shape {
 }
 
 
-struct CardWideView: View {
-    
-    
+struct complete_CombinedCardView: View {
     @StateObject var maggy  = MagnetManager()
     @StateObject var acc    = AccelerManager()
     @StateObject var gyro   = GyroManager()
     
-//    @State var x = MotionTitleButtonView(motion: MagnetManager())
     @State private var isMagOn = false
     @State private var isAccOn = false
     @State private var isGyrOn = false
+    var body: some View {
+        let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
+        let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
+        let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
+        
+        ZStack {
+            CardWideTextView(magSensorInstance: magSensorInstance,
+                             accSensorInstance: accSensorInstance, gyrSensorInstance: gyrSensorInstance)
+            CardWideView(magSensorInstance: magSensorInstance,
+                         accSensorInstance: accSensorInstance, gyrSensorInstance: gyrSensorInstance
+            )
+        }
+    }
+}
+
+
+
+struct CardWideView: View {
+    
+    
+//    @StateObject var maggy  = MagnetManager()
+//    @StateObject var acc    = AccelerManager()
+//    @StateObject var gyro   = GyroManager()
+//
+//    @State private var isMagOn = false
+//    @State private var isAccOn = false
+//    @State private var isGyrOn = false
+    let magSensorInstance: MotionTitleButtonView
+    let accSensorInstance: MotionTitleButtonView
+    let gyrSensorInstance: MotionTitleButtonView
+    
+    
     let screenWidth = UIScreen.main.bounds.size.width
 
     var body: some View {
         
-        let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
-        let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
-        let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
+//        let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
+//        let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
+//        let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
         
             VStack(spacing: 28) {
                 Text("Sensor Data")
@@ -89,7 +118,9 @@ struct CardWideTextView: View {
 //    @ObservedObject var magSensorInstance: MotionManager
 //    magSensorInstance
     
-
+    let magSensorInstance: MotionTitleButtonView
+    let accSensorInstance: MotionTitleButtonView
+    let gyrSensorInstance: MotionTitleButtonView
     
     let screenWidth = UIScreen.main.bounds.size.width
     
@@ -100,9 +131,9 @@ struct CardWideTextView: View {
 
             VStack(alignment: .leading, spacing: 8) {
 
-//                MotionDataView(motion: magSensorInstance.motion, turnedOn: magSensorInstance.$turnedOn)
-//                MotionDataView(motion: accSensorInstance.motion, turnedOn: accSensorInstance.$turnedOn)
-//                MotionDataView(motion: gyrSensorInstance.motion, turnedOn: gyrSensorInstance.$turnedOn)
+                MotionDataView(motion: magSensorInstance.motion, turnedOn: magSensorInstance.$turnedOn)
+                MotionDataView(motion: accSensorInstance.motion, turnedOn: accSensorInstance.$turnedOn)
+                MotionDataView(motion: gyrSensorInstance.motion, turnedOn: gyrSensorInstance.$turnedOn)
                 
                 Text("text1")
                     .font(.title)
@@ -128,22 +159,23 @@ struct CardWideTextView: View {
 }
 
 
-struct CardWideCombinedView: View {
-    
-    var body: some View {
-        ZStack {
-            CardWideTextView()
-            CardWideView()
-        }
-    }
-}
+//struct CardWideCombinedView: View {
+//
+//    var body: some View {
+//        ZStack {
+//            CardWideTextView()
+//            CardWideView()
+//        }
+//    }
+//}
 
 
 struct CardWideView_Previews: PreviewProvider {
     static var previews: some View {
-        CardWideCombinedView()
-        CardWideView()
-        CardWideTextView()
+        complete_CombinedCardView()
+//        CardWideCombinedView()
+//        CardWideView()
+//        CardWideTextView()
 //        Spacer()
     }
 }
