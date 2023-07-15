@@ -22,20 +22,13 @@
 		4BB91BAB28F9F9B1007E0A1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */; };
 		4BB91BAD28F9FACF007E0A1C /* OnBoardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */; };
 		4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */; };
-		4BB91BB128FB1359007E0A1C /* composite_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB028FB1359007E0A1C /* composite_view.swift */; };
 		4BB91BB328FB1521007E0A1C /* fileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB228FB1521007E0A1C /* fileWriter.swift */; };
 		4BB91BB528FF3F73007E0A1C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB428FF3F73007E0A1C /* MainTabView.swift */; };
-		4BB91BB728FF40E9007E0A1C /* MainSensorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB628FF40E9007E0A1C /* MainSensorView.swift */; };
-		4BB91BB928FF42A4007E0A1C /* TestView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BB828FF42A4007E0A1C /* TestView2.swift */; };
 		4BB91BBB28FF440E007E0A1C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBA28FF440E007E0A1C /* SettingsView.swift */; };
-		4BB91BBD28FF4430007E0A1C /* SensorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBC28FF4430007E0A1C /* SensorView.swift */; };
-		4BB91BBF2901E5AF007E0A1C /* structTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BBE2901E5AF007E0A1C /* structTester.swift */; };
 		4BB91BC42905DED5007E0A1C /* MotionTitleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */; };
 		4BB91BC82905E47F007E0A1C /* MotionDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC72905E47F007E0A1C /* MotionDataView.swift */; };
-		4BB91BCA2905EBF6007E0A1C /* testerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BC92905EBF6007E0A1C /* testerView.swift */; };
 		4BB91BCC29085CB9007E0A1C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BCB29085CB9007E0A1C /* CardView.swift */; };
 		4BB91BCE2908615B007E0A1C /* CardWideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BCD2908615B007E0A1C /* CardWideView.swift */; };
-		4BB91BD0290865D0007E0A1C /* shapeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BCF290865D0007E0A1C /* shapeStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,20 +66,13 @@
 		4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingFlowView.swift; sourceTree = "<group>"; };
 		4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowView.swift; sourceTree = "<group>"; };
-		4BB91BB028FB1359007E0A1C /* composite_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = composite_view.swift; sourceTree = "<group>"; };
 		4BB91BB228FB1521007E0A1C /* fileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fileWriter.swift; sourceTree = "<group>"; };
 		4BB91BB428FF3F73007E0A1C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		4BB91BB628FF40E9007E0A1C /* MainSensorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSensorView.swift; sourceTree = "<group>"; };
-		4BB91BB828FF42A4007E0A1C /* TestView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView2.swift; sourceTree = "<group>"; };
 		4BB91BBA28FF440E007E0A1C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		4BB91BBC28FF4430007E0A1C /* SensorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorView.swift; sourceTree = "<group>"; };
-		4BB91BBE2901E5AF007E0A1C /* structTester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = structTester.swift; sourceTree = "<group>"; };
 		4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTitleButtonView.swift; sourceTree = "<group>"; };
 		4BB91BC72905E47F007E0A1C /* MotionDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionDataView.swift; sourceTree = "<group>"; };
-		4BB91BC92905EBF6007E0A1C /* testerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testerView.swift; sourceTree = "<group>"; };
 		4BB91BCB29085CB9007E0A1C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4BB91BCD2908615B007E0A1C /* CardWideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWideView.swift; sourceTree = "<group>"; };
-		4BB91BCF290865D0007E0A1C /* shapeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shapeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,11 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				4B4488C128D9BAB70057B2E2 /* SensorDataApp.swift */,
-				4BB91BB628FF40E9007E0A1C /* MainSensorView.swift */,
-				4BB91BBA28FF440E007E0A1C /* SettingsView.swift */,
-				4BB91BC92905EBF6007E0A1C /* testerView.swift */,
-				4BB91BCB29085CB9007E0A1C /* CardView.swift */,
-				4BB91BCF290865D0007E0A1C /* shapeStruct.swift */,
 				4BB91BC22905DCA9007E0A1C /* src */,
 				4BB91BC12905DC9D007E0A1C /* tests */,
 			);
@@ -182,12 +163,9 @@
 		4BB91BC12905DC9D007E0A1C /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				4BB91BCB29085CB9007E0A1C /* CardView.swift */,
 				4B4488C328D9BAB70057B2E2 /* ContentView.swift */,
-				4BB91BB828FF42A4007E0A1C /* TestView2.swift */,
-				4BB91BBE2901E5AF007E0A1C /* structTester.swift */,
 				4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */,
-				4BB91BB028FB1359007E0A1C /* composite_view.swift */,
-				4BB91BBC28FF4430007E0A1C /* SensorView.swift */,
 				4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */,
 				4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */,
 			);
@@ -219,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				4BB91BB428FF3F73007E0A1C /* MainTabView.swift */,
+				4BB91BBA28FF440E007E0A1C /* SettingsView.swift */,
 				4BB91BCD2908615B007E0A1C /* CardWideView.swift */,
 			);
 			path = main;
@@ -359,29 +338,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB91BAB28F9F9B1007E0A1C /* ViewController.swift in Sources */,
-				4BB91BCA2905EBF6007E0A1C /* testerView.swift in Sources */,
 				4BB91BB328FB1521007E0A1C /* fileWriter.swift in Sources */,
 				4BB91BAD28F9FACF007E0A1C /* OnBoardingFlowView.swift in Sources */,
 				4B4488C428D9BAB70057B2E2 /* ContentView.swift in Sources */,
-				4BB91BB728FF40E9007E0A1C /* MainSensorView.swift in Sources */,
 				4BB91BC42905DED5007E0A1C /* MotionTitleButtonView.swift in Sources */,
 				4BB91BCC29085CB9007E0A1C /* CardView.swift in Sources */,
 				4B9A49642A62F16400A36A41 /* SensorData.swift in Sources */,
 				4B86558529E998670009ACEB /* output.swift in Sources */,
 				4B86558329E997770009ACEB /* flaskClient.swift in Sources */,
 				4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */,
-				4BB91BB128FB1359007E0A1C /* composite_view.swift in Sources */,
 				4BB91BB528FF3F73007E0A1C /* MainTabView.swift in Sources */,
-				4BB91BBD28FF4430007E0A1C /* SensorView.swift in Sources */,
 				4B4488C228D9BAB70057B2E2 /* SensorDataApp.swift in Sources */,
 				4B22B83828DC9E58005F97CE /* SocketIO.swift in Sources */,
 				4B86558129E992300009ACEB /* flask_server.swift in Sources */,
 				4B22B83628DC9CCB005F97CE /* SensorClasses.swift in Sources */,
 				4BB91BCE2908615B007E0A1C /* CardWideView.swift in Sources */,
 				4BB91BC82905E47F007E0A1C /* MotionDataView.swift in Sources */,
-				4BB91BD0290865D0007E0A1C /* shapeStruct.swift in Sources */,
-				4BB91BB928FF42A4007E0A1C /* TestView2.swift in Sources */,
-				4BB91BBF2901E5AF007E0A1C /* structTester.swift in Sources */,
 				4BB91BBB28FF440E007E0A1C /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
