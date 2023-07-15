@@ -154,15 +154,12 @@ class SensorData {
 
 class FlaskSend {
     var poster: FlaskClient? = nil
-    let allSensorData: SensorData?
     
     func sendUpdate(data: [String: [String: Any]]){
-//        self.poster?.sendSensorData(sensorData: (allSensorData?.updateSensorData())!)
         self.poster?.sendSensorData(sensorData: data)
     }
     
-    init(SensorData: SensorData?, poster: FlaskClient? = nil) {
-        self.allSensorData = SensorData
+    init(poster: FlaskClient? = nil) {
         if poster==nil {
             self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
         }

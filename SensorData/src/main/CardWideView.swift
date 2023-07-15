@@ -61,6 +61,8 @@ struct CombinedCardView: View {
         return isMagOn || isAccOn || isGyrOn
     }
     
+//    let messenger = FlaskSend()
+    
     var body: some View {
 //        print("hi")
 //        NSLog("Can anyone hear me?")
@@ -71,7 +73,8 @@ struct CombinedCardView: View {
         
         if isFlagOn{
             var data = sensorDataCollection.updateSensorData(isMagOn: isMagOn, isAccOn: isAccOn, isGyrOn: isGyrOn)
-
+//            FlaskSend(SensorData: data)
+            var _: () = FlaskSend().sendUpdate(data: data)
 //            FlaskSend(data)
         }
         
