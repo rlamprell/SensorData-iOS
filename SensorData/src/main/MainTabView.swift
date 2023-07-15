@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            MainSensorView()
+            CombinedCardView()
                 .tabItem{ Text("Sensors") }
                 .tag(1)
             SettingsView()
@@ -23,6 +23,7 @@ struct MainTabView: View {
 struct tabViewTest_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
+        CombinedCardView()
         SettingsView()
     }
 }

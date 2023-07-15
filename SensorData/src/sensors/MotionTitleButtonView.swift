@@ -17,7 +17,6 @@
 import SwiftUI
 
 struct MotionTitleButtonView: View {
-    
     @ObservedObject var motion: MotionManager
     @Binding var turnedOn: Bool // = false
     
@@ -25,7 +24,7 @@ struct MotionTitleButtonView: View {
         HStack {
             Toggle(motion.getSensorName(), isOn: $turnedOn)
               .onChange(of: turnedOn) { value in
-                  if turnedOn{
+                if turnedOn{
                     motion.start()
                 }
                 else {
@@ -33,17 +32,6 @@ struct MotionTitleButtonView: View {
                 }
             }
         }
-        
-        
-        
-//        if turnedOn{
-//            HStack {
-//                Text("X: \(motion.x)")
-//                Text("Y: \(motion.y)")
-//                Text("Z: \(motion.z)")
-////                Text("on: \(turnedOn)" as String)
-//            }
-//        }
     }
 }
 

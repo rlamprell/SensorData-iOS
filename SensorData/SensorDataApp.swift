@@ -40,6 +40,8 @@ struct SensorDataApp: App {
 //            AccelerometerView()
 //            mainViewerView()
 //            newName()
+            let _ = print("hi!")
+//            NSLog("Can anyone hear me?")
             MainTabView()
         }
     }

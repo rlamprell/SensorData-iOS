@@ -11,15 +11,9 @@ import SwiftUI
 
 struct MotionDataView: View {
     @ObservedObject var motion: MotionManager
-//    @ObservedObject var motion: MotionTitleButtonView
-    @Binding var turnedOn: Bool
+    @Binding        var turnedOn: Bool
     
     var body: some View {
-//        HStack {
-//            Text("X: \(motion.x)")
-////            Text("\(turnedOn)" as String)
-//        }
-        
         if turnedOn{
             HStack {
                 Text("X: \(motion.x)")
@@ -29,13 +23,3 @@ struct MotionDataView: View {
         }
     }
 }
-
-
-
-//
-//struct MotionDataView_Previews: PreviewProvider {
-//    static var previews: some View {
-////        MotionDataView(motion: MotionManager())
-//        return
-//    }
-//}

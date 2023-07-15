@@ -16,7 +16,6 @@ extension View {
 
 
 struct RoundedCorner: Shape {
-
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
 
@@ -37,7 +36,7 @@ class screenDims {
     init(){
         self.screenWidth     = UIScreen.main.bounds.size.width
         self.screenHeight    = UIScreen.main.bounds.size.height
-        self.topCardHeight   = CGFloat(Int(self.screenHeight/1.25))
+        self.topCardHeight   = CGFloat(Int(self.screenHeight/1.3))
         self.botPadding      = 40.0
         self.botCardHeight   = self.screenHeight - self.topCardHeight + self.botPadding
     }
@@ -59,6 +58,8 @@ struct CombinedCardView: View {
     public let botCardHeight    = screenDims().botCardHeight
     
     var body: some View {
+//        print("hi")
+//        NSLog("Can anyone hear me?")
         let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
         let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
         let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
@@ -137,8 +138,8 @@ struct CardWideTextView: View {
             Spacer()
         }
         .foregroundColor(.white)
-        .padding(16)
-        .padding(.top, 60)
+        .padding(.horizontal, 16)
+        .padding(.top, 76)
         .frame(width: screenWidth, height: screenDims().botCardHeight)
         .background(LinearGradient(
             gradient: Gradient(stops: [
