@@ -72,7 +72,7 @@ struct CombinedCardView: View {
         let sensorDataCollection = SensorData(magnet: maggy, accel: acc, gyro: gyro)
         
         if isFlagOn{
-            var data = sensorDataCollection.updateSensorData(isMagOn: isMagOn, isAccOn: isAccOn, isGyrOn: isGyrOn)
+            let data = sensorDataCollection.updateSensorData(isMagOn: isMagOn, isAccOn: isAccOn, isGyrOn: isGyrOn)
 //            FlaskSend(SensorData: data)
             var _: () = FlaskSend().sendUpdate(data: data)
 //            FlaskSend(data)
