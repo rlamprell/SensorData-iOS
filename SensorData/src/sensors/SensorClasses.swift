@@ -25,11 +25,13 @@ class MagnetManager: MotionManager {
                 self.x = data.magneticField.x
                 self.y = data.magneticField.y
                 self.z = data.magneticField.z
-                let p: () = self.updateSensorData()
-                print(p)
-                let _ = print("hi!")
-                NSLog("Can anyone hear me?")
-                self.sendUpdate()
+                self.updateSensorData()
+//                self.sendToSensorData()
+//                let sensor_data: () = self.updateSensorData()
+//                print(p)
+//                let _ = print("hi!")
+//                NSLog("Can anyone hear me?")
+//                self.sendUpdate()
             }
         }
     }
@@ -40,6 +42,10 @@ class MagnetManager: MotionManager {
     
     override func getSensorName()->String {
         return "Magnet Data"
+    }
+    
+    override func sendToSensorData(){
+        SensorData(magnet: self)
     }
 }
 
@@ -61,11 +67,13 @@ class AccelerManager: MotionManager {
                 self.y = data.acceleration.y
                 self.z = data.acceleration.z
                 self.updateSensorData()
-                let p: () = self.updateSensorData()
-                print(p)
-                let _ = print("hi!")
-                NSLog("Can anyone hear me?")
-                self.sendUpdate()
+//                self.sendToSensorData()
+//                self.updateSensorData()
+//                let p: () = self.updateSensorData()
+//                print(p)
+//                let _ = print("hi!")
+//                NSLog("Can anyone hear me?")
+//                self.sendUpdate()
             }
         }
     }
@@ -76,6 +84,10 @@ class AccelerManager: MotionManager {
     
     override func getSensorName()->String {
         return "Accel Data"
+    }
+    
+    override func sendToSensorData(){
+        SensorData(accel: self)
     }
 }
 
@@ -98,6 +110,8 @@ class GyroManager: MotionManager {
                 self.y = data.rotationRate.y
                 self.z = data.rotationRate.z
                 self.updateSensorData()
+//                self.sendToSensorData()
+//                self.updateSensorData()
             }
         }
     }
@@ -108,6 +122,10 @@ class GyroManager: MotionManager {
     
     override func getSensorName()->String {
         return "Gyro Data"
+    }
+    
+    override func sendToSensorData(){
+        SensorData(gyro: self)
     }
 }
 
@@ -129,7 +147,7 @@ class DeviceMotion: MotionManager {
                 self.x = data.rotationRate.x
                 self.y = data.rotationRate.y
                 self.z = data.rotationRate.z
-                self.updateSensorData()
+//                self.updateSensorData()
             }
         }
     }
@@ -148,12 +166,12 @@ class DeviceMotion: MotionManager {
 
 class MotionManager: ObservableObject {
     let motionManager: CMMotionManager
-    var poster: FlaskClient? = nil
+//    var poster: FlaskClient? = nil
 
     @Published var x: Double = 0.0
     @Published var y: Double = 0.0
     @Published var z: Double = 0.0
-    @Published var sensorDict: Dictionary = [:]
+    @Published var sensorDict: [String: Any] = [:]
     
     func start() {
         self.startUpdates()
@@ -164,19 +182,23 @@ class MotionManager: ObservableObject {
     func startUpdates() {}
     func getSensorName()->String { return "" }
     func updateSensorData(){
-        self.sensorDict = ["name": self.getSensorName(), "x": self.x, "y": self.y, "z": self.z]
+        self.sensorDict = ["name": self.getSensorName(), "data" : ["x": self.x, "y": self.y, "z": self.z]]
     }
-    func getSensorData()->[String: Double] {
-        return ["x": self.x, "y": self.y, "z": self.z]
-    }
-    func sendUpdate(){
-        self.poster?.sendSensorData(sensorData: self.sensorDict)
-    }
+    func sendToSensorData(){}
+//    func getSensorData()->[String: Double] {
+//        return ["x": self.x, "y": self.y, "z": self.z]
+//    }
+//    func sendUpdate(){
+//        self.poster?.sendSensorData(sensorData: self.sensorDict)
+//    }
+//    func toDictionary() -> [String: Double] {
+//        return ["x": self.x, "y": self.y, "z": self.z]
+//    }
     
-    init(sensorUpdateRate: Float16 = 0.10, poster: FlaskClient? = nil) {
-        if poster==nil {
-            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
-        }
+    init(sensorUpdateRate: Float16 = 0.10){//}, poster: FlaskClient? = nil) {
+//        if poster==nil {
+//            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
+//        }
         self.motionManager = CMMotionManager()
         self.setUpdateInterval(sensorUpdateRate: sensorUpdateRate)
     }

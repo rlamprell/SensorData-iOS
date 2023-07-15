@@ -18,6 +18,7 @@
 		4B86558129E992300009ACEB /* flask_server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B86558029E992300009ACEB /* flask_server.swift */; };
 		4B86558329E997770009ACEB /* flaskClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B86558229E997770009ACEB /* flaskClient.swift */; };
 		4B86558529E998670009ACEB /* output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B86558429E998670009ACEB /* output.swift */; };
+		4B9A49642A62F16400A36A41 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9A49632A62F16400A36A41 /* SensorData.swift */; };
 		4BB91BAB28F9F9B1007E0A1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */; };
 		4BB91BAD28F9FACF007E0A1C /* OnBoardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */; };
 		4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */; };
@@ -68,6 +69,7 @@
 		4B86558029E992300009ACEB /* flask_server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flask_server.swift; sourceTree = "<group>"; };
 		4B86558229E997770009ACEB /* flaskClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flaskClient.swift; sourceTree = "<group>"; };
 		4B86558429E998670009ACEB /* output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = output.swift; sourceTree = "<group>"; };
+		4B9A49632A62F16400A36A41 /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
 		4BB91BAA28F9F9B1007E0A1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BB91BAC28F9FACF007E0A1C /* OnBoardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingFlowView.swift; sourceTree = "<group>"; };
 		4BB91BAE28F9FAFD007E0A1C /* MainFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowView.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				4BB91BC32905DED5007E0A1C /* MotionTitleButtonView.swift */,
 				4BB91BC72905E47F007E0A1C /* MotionDataView.swift */,
 				4B22B83528DC9CCB005F97CE /* SensorClasses.swift */,
+				4B9A49632A62F16400A36A41 /* SensorData.swift */,
 			);
 			path = sensors;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				4BB91BB728FF40E9007E0A1C /* MainSensorView.swift in Sources */,
 				4BB91BC42905DED5007E0A1C /* MotionTitleButtonView.swift in Sources */,
 				4BB91BCC29085CB9007E0A1C /* CardView.swift in Sources */,
+				4B9A49642A62F16400A36A41 /* SensorData.swift in Sources */,
 				4B86558529E998670009ACEB /* output.swift in Sources */,
 				4B86558329E997770009ACEB /* flaskClient.swift in Sources */,
 				4BB91BAF28F9FAFD007E0A1C /* MainFlowView.swift in Sources */,

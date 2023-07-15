@@ -57,12 +57,23 @@ struct CombinedCardView: View {
     public let topCardHeight    = screenDims().topCardHeight
     public let botCardHeight    = screenDims().botCardHeight
     
+    var isFlagOn: Bool {
+        return isMagOn || isAccOn || isGyrOn
+    }
+    
     var body: some View {
 //        print("hi")
 //        NSLog("Can anyone hear me?")
         let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
         let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
         let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
+        let sensorDataCollection = SensorData(magnet: maggy, accel: acc, gyro: gyro)
+        
+        if isFlagOn{
+            var data = sensorDataCollection.updateSensorData(isMagOn: isMagOn, isAccOn: isAccOn, isGyrOn: isGyrOn)
+
+//            FlaskSend(data)
+        }
         
         ZStack {
             CardWideTextView(magSensorInstance: magSensorInstance,
