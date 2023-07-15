@@ -38,6 +38,9 @@ class MagnetManager: MotionManager {
     
     override func stop() {
         self.motionManager.stopMagnetometerUpdates()
+        self.x = 0
+        self.y = 0
+        self.z = 0
     }
     
     override func getSensorName()->String {
@@ -80,6 +83,9 @@ class AccelerManager: MotionManager {
     
     override func stop() {
         self.motionManager.stopAccelerometerUpdates()
+        self.x = 0
+        self.y = 0
+        self.z = 0
     }
     
     override func getSensorName()->String {
@@ -118,6 +124,9 @@ class GyroManager: MotionManager {
     
     override func stop() {
         self.motionManager.stopGyroUpdates()
+        self.x = 0
+        self.y = 0
+        self.z = 0
     }
     
     override func getSensorName()->String {
