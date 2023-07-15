@@ -26,12 +26,6 @@ class MagnetManager: MotionManager {
                 self.y = data.magneticField.y
                 self.z = data.magneticField.z
                 self.updateSensorData()
-//                self.sendToSensorData()
-//                let sensor_data: () = self.updateSensorData()
-//                print(p)
-//                let _ = print("hi!")
-//                NSLog("Can anyone hear me?")
-//                self.sendUpdate()
             }
         }
     }
@@ -70,13 +64,6 @@ class AccelerManager: MotionManager {
                 self.y = data.acceleration.y
                 self.z = data.acceleration.z
                 self.updateSensorData()
-//                self.sendToSensorData()
-//                self.updateSensorData()
-//                let p: () = self.updateSensorData()
-//                print(p)
-//                let _ = print("hi!")
-//                NSLog("Can anyone hear me?")
-//                self.sendUpdate()
             }
         }
     }
@@ -116,8 +103,6 @@ class GyroManager: MotionManager {
                 self.y = data.rotationRate.y
                 self.z = data.rotationRate.z
                 self.updateSensorData()
-//                self.sendToSensorData()
-//                self.updateSensorData()
             }
         }
     }
@@ -194,20 +179,8 @@ class MotionManager: ObservableObject {
         self.sensorDict = ["name": self.getSensorName(), "data" : ["x": self.x, "y": self.y, "z": self.z]]
     }
     func sendToSensorData(){}
-//    func getSensorData()->[String: Double] {
-//        return ["x": self.x, "y": self.y, "z": self.z]
-//    }
-//    func sendUpdate(){
-//        self.poster?.sendSensorData(sensorData: self.sensorDict)
-//    }
-//    func toDictionary() -> [String: Double] {
-//        return ["x": self.x, "y": self.y, "z": self.z]
-//    }
     
-    init(sensorUpdateRate: Float16 = 0.10){//}, poster: FlaskClient? = nil) {
-//        if poster==nil {
-//            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
-//        }
+    init(sensorUpdateRate: Float16 = 0.10){
         self.motionManager = CMMotionManager()
         self.setUpdateInterval(sensorUpdateRate: sensorUpdateRate)
     }

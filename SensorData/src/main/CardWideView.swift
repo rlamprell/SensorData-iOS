@@ -57,25 +57,19 @@ struct CombinedCardView: View {
     public let topCardHeight    = screenDims().topCardHeight
     public let botCardHeight    = screenDims().botCardHeight
     
-    var isFlagOn: Bool {
+    var aSensorIsOn: Bool {
         return isMagOn || isAccOn || isGyrOn
     }
     
-//    let messenger = FlaskSend()
-    
     var body: some View {
-//        print("hi")
-//        NSLog("Can anyone hear me?")
         let magSensorInstance = MotionTitleButtonView(motion: maggy, turnedOn: $isMagOn)
         let accSensorInstance = MotionTitleButtonView(motion: acc, turnedOn: $isAccOn)
         let gyrSensorInstance = MotionTitleButtonView(motion: gyro, turnedOn: $isGyrOn)
         let sensorDataCollection = SensorData(magnet: maggy, accel: acc, gyro: gyro)
         
-        if isFlagOn{
-            let data = sensorDataCollection.updateSensorData(isMagOn: isMagOn, isAccOn: isAccOn, isGyrOn: isGyrOn)
-//            FlaskSend(SensorData: data)
-            var _: () = FlaskSend().sendUpdate(data: data)
-//            FlaskSend(data)
+        if aSensorIsOn{
+            let dataCollected = sensorDataCollection.updateSensorData(isMagOn: isMagOn, isAccOn: isAccOn, isGyrOn: isGyrOn)
+            var _: () = FlaskSend().sendUpdate(data: dataCollected)
         }
         
         ZStack {

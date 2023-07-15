@@ -17,7 +17,6 @@ class FlaskClient {
         self.session = URLSession(configuration: .default)
     }
     
-//    func sendSensorData(sensorData: [String: Any]) {
     func sendSensorData(sensorData: [AnyHashable: Any]) {
         if let jsonData = try? JSONSerialization.data(withJSONObject: sensorData, options: []) {
             var request = URLRequest(url: serverUrl)
