@@ -20,28 +20,46 @@ class SensorData {
             let magnetData: [String: Any] = ["x": magnet.x, "y": magnet.y, "z": magnet.z]
             sensorData["magnet"] = magnetData
         }
-        else {
-            let magnetData: [String: Any] = ["x": 0, "y": 0, "z": 0]
-            sensorData["magnet"] = magnetData
-        }
+//        else {
+//            let magnetData: [String: Any] = ["x": 0, "y": 0, "z": 0]
+//            sensorData["magnet"] = magnetData
+//        }
 
         if let accel = accel {
             let accelData: [String: Any] = ["x": accel.x, "y": accel.y, "z": accel.z]
             sensorData["accel"] = accelData
         }
-        else {
-            let accelData: [String: Any] = ["x": 0, "y": 0, "z": 0]
-            sensorData["accel"] = accelData
-        }
+//        else {
+//            let accelData: [String: Any] = ["x": 0, "y": 0, "z": 0]
+//            sensorData["accel"] = accelData
+//        }
 
         if let gyro = gyro {
             let gyroData: [String: Any] = ["x": gyro.x, "y": gyro.y, "z": gyro.z]
             sensorData["gyro"] = gyroData
         }
-        else {
-            let gyroData: [String: Any] = ["x": 0, "y": 0, "z": 0]
-            sensorData["gyro"] = gyroData
+//        else {
+//            let gyroData: [String: Any] = ["x": 0, "y": 0, "z": 0]
+//            sensorData["gyro"] = gyroData
+//        }
+        if !sensorData.isEmpty {
+            var executionDetails: [String: Any] = [:]
+
+            // Add timestamp (now)
+            let timestamp = Int(Date().timeIntervalSince1970) // Unix timestamp in seconds
+            executionDetails["timestamp"] = timestamp
+
+            // Add execution ID (assuming you have an executionID variable)
+            let executionID = "your_execution_id_here"
+            executionDetails["execution_id"] = executionID
+
+            // Add exercise type (assuming you have an exerciseType variable)
+            let exerciseType = "your_exercise_type_here"
+            executionDetails["exercise_type"] = exerciseType
+
+            sensorData["execution_details"] = executionDetails
         }
+        
         
         print(sensorData)
         return sensorData
@@ -65,7 +83,10 @@ class FlaskSend {
     
     init(poster: FlaskClient? = nil) {
         if poster==nil {
-            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
+            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.137.199 :3000/insert_data")!)
+//            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
+//            self.poster = FlaskClient(serverUrl: URL(string:"http://172.20.0.1:3000/example")!)
+//            self.poster = FlaskClient(serverUrl: URL(string:"http://127.0.0.1:3000/example")!)
         }
     }
 }

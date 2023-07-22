@@ -26,6 +26,9 @@ class FlaskClient {
             
             let task = session.dataTask(with: request) { (data, response, error) in
                 // Handle the server response here
+                print(response as Any)
+                print(data as Any)
+                print(error as Any)
             }
             task.resume()
         }
