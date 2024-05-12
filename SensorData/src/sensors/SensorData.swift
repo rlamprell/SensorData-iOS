@@ -83,10 +83,11 @@ class FlaskSend {
     
     init(poster: FlaskClient? = nil) {
         if poster==nil {
-            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.137.199 :3000/insert_data")!)
+            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.137.199:3000/insert_data")!)
 //            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
 //            self.poster = FlaskClient(serverUrl: URL(string:"http://172.20.0.1:3000/example")!)
 //            self.poster = FlaskClient(serverUrl: URL(string:"http://127.0.0.1:3000/example")!)
         }
     }
 }
+

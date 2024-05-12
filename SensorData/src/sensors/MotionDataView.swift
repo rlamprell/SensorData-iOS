@@ -15,10 +15,14 @@ struct MotionDataView: View {
     
     var body: some View {
         if turnedOn{
-            HStack {
-                Text("X: \(motion.x)")
-                Text("Y: \(motion.y)")
-                Text("Z: \(motion.z)")
+            VStack {
+                Text("\(motion.getSensorName())")
+                HStack {
+                    Text("X: \(motion.x)")
+                    Text("Y: \(motion.y)")
+                    Text("Z: \(motion.z)")
+                }
+
             }
         }
     }

@@ -7,11 +7,52 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct SettingsView2: View {
+//    @ObservedObject var connectionSettings: ConnectionSettings
+    @StateObject var connectionSettings = ConnectionSettings()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+//        let
+        VStack {
+            Text("hello")
+            
+//            settingsView2()
+        }
     }
 }
+
+struct SettingsView: View {
+//    @ObservedObject var connectionSettings = ConnectionSettings()
+    @StateObject var connectionSettings = ConnectionSettings()
+    @State private var placeholder: String = ""
+    
+    var body: some View {
+        VStack {
+            TextField("Enter IP Address", text: $connectionSettings.ipAddress)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            TextField("Enter Port Number", text: $connectionSettings.portNumber)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            TextField("Set a Poilling Rate (milliseconds)", text: $placeholder)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+        }
+        .padding()
+    }
+}
+
+//struct myView: View {
+//    @StateObject private var connectionSettings = ConnectionSettings()
+//
+//    var body: some View {
+//        VStack {
+//            SettingsView()
+//            // Add other UI elements and functionality here as needed
+//        }
+//    }
+//}
+
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {

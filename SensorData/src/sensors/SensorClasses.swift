@@ -41,9 +41,9 @@ class MagnetManager: MotionManager {
         return "Magnet Data"
     }
     
-    override func sendToSensorData(){
-        SensorData(magnet: self)
-    }
+//    override func sendToSensorData(){
+//        SensorData(magnet: self)
+//    }
 }
 
 
@@ -79,9 +79,9 @@ class AccelerManager: MotionManager {
         return "Accel Data"
     }
     
-    override func sendToSensorData(){
-        SensorData(accel: self)
-    }
+//    override func sendToSensorData(){
+//        SensorData(accel: self)
+//    }
 }
 
 
@@ -118,9 +118,9 @@ class GyroManager: MotionManager {
         return "Gyro Data"
     }
     
-    override func sendToSensorData(){
-        SensorData(gyro: self)
-    }
+//    override func sendToSensorData(){
+//        SensorData(gyro: self)
+//    }
 }
 
 
@@ -160,7 +160,6 @@ class DeviceMotion: MotionManager {
 
 class MotionManager: ObservableObject {
     let motionManager: CMMotionManager
-//    var poster: FlaskClient? = nil
 
     @Published var x: Double = 0.0
     @Published var y: Double = 0.0

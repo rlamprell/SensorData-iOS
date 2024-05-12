@@ -32,13 +32,15 @@ class screenDims {
     let topCardHeight:  CGFloat
     let botCardHeight:  CGFloat
     let botPadding:     CGFloat
+//    let offset:         CGFloat
 
     init(){
+        let offset: CGFloat  = 200.0
         self.screenWidth     = UIScreen.main.bounds.size.width
-        self.screenHeight    = UIScreen.main.bounds.size.height
-        self.topCardHeight   = CGFloat(Int(self.screenHeight/1.3))
+        self.screenHeight    = UIScreen.main.bounds.size.height - offset
+        self.topCardHeight   = CGFloat(Float(self.screenHeight/1.3))
         self.botPadding      = 40.0
-        self.botCardHeight   = self.screenHeight - self.topCardHeight + self.botPadding
+        self.botCardHeight   = self.screenHeight - self.topCardHeight + self.botPadding + offset
     }
 }
 
@@ -116,11 +118,11 @@ struct CardWideView: View {
                       location: 1)]),
             startPoint: UnitPoint(x:0.5, y:3.08e-1), endPoint: UnitPoint(x:-0.001, y:0.977)))
         .cornerRadius(68, corners: [.bottomLeft, .bottomRight])
-        .overlay(
-            RoundedRectangle(cornerRadius: 68)
-                .stroke(.white, lineWidth: 10)
-                .cornerRadius(900, corners: [.topLeft, .bottomRight, .topRight])
-        )
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 68)
+//                .stroke(.white, lineWidth: 10)
+//                .cornerRadius(900, corners: [.topLeft, .bottomRight, .topRight])
+//        )
         .frame(maxHeight: .infinity,
                alignment: .top)
         .edgesIgnoringSafeArea(.all)
@@ -136,18 +138,23 @@ struct CardWideTextView: View {
     
     var body: some View {
         VStack(spacing: 8) {
+//            Spacer()
             Text("Output:")
                 .font(.title)
                 .fontWeight(.bold)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, maxHeight: screenDims().botCardHeight, alignment: .topLeading)
             MotionDataView(motion: magSensorInstance.motion, turnedOn: magSensorInstance.$turnedOn)
+                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
             MotionDataView(motion: accSensorInstance.motion, turnedOn: accSensorInstance.$turnedOn)
+                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
             MotionDataView(motion: gyrSensorInstance.motion, turnedOn: gyrSensorInstance.$turnedOn)
-            Spacer()
+                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
+//            Spacer()
         }
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(.white)
         .padding(.horizontal, 16)
-        .padding(.top, 76)
+        .padding(.top, 125)
         .frame(width: screenWidth, height: screenDims().botCardHeight)
         .background(LinearGradient(
             gradient: Gradient(stops: [
