@@ -12,14 +12,18 @@ import SwiftUI
 // this is so it can be set in the settings menu and sent to
 // the combinedCardView for recording
 struct MainTabView: View {
+    @StateObject var connectionSettings = ConnectionSettings()
+    
     var body: some View {
         TabView {
             Group {
                 CombinedCardView()
+                    .environmentObject(connectionSettings)
                     .tabItem {
                         Label("Sensors", systemImage: "square.and.pencil")
                     }
                 SettingsView()
+                    .environmentObject(connectionSettings)
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }

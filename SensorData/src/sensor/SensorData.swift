@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
 
 class SensorData {
@@ -73,21 +75,48 @@ class SensorData {
 }
 
 
+//class FlaskSend {
+//    var poster: FlaskClient? = nil
+//    private var cancellable: AnyCancellable?
+//    
+//    init(connectionSettings: ConnectionSettings) {
+//        // Initialize with current network config
+//        var port = connectionSettings.portNumber
+//        var ipAddress = connectionSettings.ipAddress
+//        var url = URL(string: "http://\(ipAddress):\(port)/insert_data")!
+//        self.poster = FlaskClient(serverUrl: url)
+//        
+//        // Subscribe to updates
+//        self.cancellable = connectionSettings.$ipAddress.combineLatest(connectionSettings.$portNumber)
+//            .sink { [weak self] ipAddress, portNumber in
+//                guard let self = self else { return }
+//                let newUrl = URL(string: "http://\(ipAddress):\(portNumber)/insert_data")!
+//                self.poster = FlaskClient(serverUrl: newUrl)
+//            }
+//    }
+//    
+//    func sendUpdate(data: [String: [String: Any]]) {
+//        self.poster?.sendSensorData(sensorData: data)
+//    }
+//}
 
-class FlaskSend {
-    var poster: FlaskClient? = nil
-    
-    func sendUpdate(data: [String: [String: Any]]){
-        self.poster?.sendSensorData(sensorData: data)
-    }
-    
-    init(poster: FlaskClient? = nil) {
-        if poster==nil {
-            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.137.199:3000/insert_data")!)
-//            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
-//            self.poster = FlaskClient(serverUrl: URL(string:"http://172.20.0.1:3000/example")!)
-//            self.poster = FlaskClient(serverUrl: URL(string:"http://127.0.0.1:3000/example")!)
-        }
-    }
-}
-
+//
+//class FlaskSend {
+//    var poster: FlaskClient? = nil
+//    private var cancellable: AnyCancellable?
+//    
+//    func sendUpdate(data: [String: [String: Any]]){
+//        self.poster?.sendSensorData(sensorData: data)
+//    }
+//    
+////    init(poster: FlaskClient? = nil, ) {
+//    init()
+//        if poster==nil {
+//            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.137.199:3000/insert_data")!)
+////            self.poster = FlaskClient(serverUrl: URL(string:"http://192.168.0.12:3000/example")!)
+////            self.poster = FlaskClient(serverUrl: URL(string:"http://172.20.0.1:3000/example")!)
+////            self.poster = FlaskClient(serverUrl: URL(string:"http://127.0.0.1:3000/example")!)
+//        }
+//    }
+//}
+//

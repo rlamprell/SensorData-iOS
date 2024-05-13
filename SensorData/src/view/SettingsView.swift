@@ -24,11 +24,11 @@ struct SettingsView2: View {
 
 struct SettingsView: View {
 //    @ObservedObject var connectionSettings = ConnectionSettings()
-    @StateObject var connectionSettings = ConnectionSettings()
+    @EnvironmentObject var connectionSettings: ConnectionSettings
     @State private var placeholder: String = ""
     
     var body: some View {
-        VStack {
+        VStack {            
             TextField("Enter IP Address", text: $connectionSettings.ipAddress)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
@@ -37,6 +37,8 @@ struct SettingsView: View {
             
             TextField("Set a Poilling Rate (milliseconds)", text: $placeholder)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            OutputSelection()
         }
         .padding()
     }
@@ -56,6 +58,8 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
+        @StateObject var connectionSettings = ConnectionSettings()
         SettingsView()
+            .environmentObject(connectionSettings)
     }
 }

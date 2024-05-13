@@ -54,6 +54,8 @@ struct CombinedCardView: View {
     @State private var isAccOn = false
     @State private var isGyrOn = false
     
+    @EnvironmentObject var connectionSettings: ConnectionSettings
+    
     public let screenHeight     = screenDims().screenHeight
     public let screenWidth      = screenDims().screenWidth
     public let topCardHeight    = screenDims().topCardHeight
@@ -71,7 +73,8 @@ struct CombinedCardView: View {
         
         if aSensorIsOn{
             let dataCollected = sensorDataCollection.updateSensorData(isMagOn: isMagOn, isAccOn: isAccOn, isGyrOn: isGyrOn)
-            var _: () = FlaskSend().sendUpdate(data: dataCollected)
+//            var _: () = FlaskSend().sendUpdate(data: dataCollected)
+            var _: () = FlaskSend(connectionSettings: connectionSettings).sendUpdate(data: dataCollected)
         }
         
         ZStack {
@@ -138,18 +141,19 @@ struct CardWideTextView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-//            Spacer()
+            //            Spacer()
             Text("Output:")
                 .font(.title)
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, maxHeight: screenDims().botCardHeight, alignment: .topLeading)
             MotionDataView(motion: magSensorInstance.motion, turnedOn: magSensorInstance.$turnedOn)
-                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
+                .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
             MotionDataView(motion: accSensorInstance.motion, turnedOn: accSensorInstance.$turnedOn)
-                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
+                .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
             MotionDataView(motion: gyrSensorInstance.motion, turnedOn: gyrSensorInstance.$turnedOn)
-                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
-//            Spacer()
+                .frame(maxWidth: .infinity, maxHeight: 100, alignment: .topLeading)
+            //            Spacer()
+//            Text($connectionSettings.ipAddress)
         }
 //        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(.white)
